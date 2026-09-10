@@ -360,74 +360,46 @@
         ========================== */
 
         textarea {
-
+            display: block;
             width: 100%;
-
-            min-height: 155px;
-
+            max-width: 100%;
+            min-height: 180px; /* Diperbesar agar terasa lebih pas/luas */
             resize: vertical;
-
-            margin-top: 18px;
-
-            padding: 20px;
-
-            background: #f1f4f1;
-
-            border:
-                1px solid
-                transparent;
-
-            border-radius: 18px;
-
+            margin-top: 24px; /* Memberi jarak lebih leluasa dari pertanyaan */
+            padding: 24px;
+            
+            /* Penyesuaian warna dan garis batas agar bentuk kolom lebih tegas */
+            background: #f4f6f4;
+            border: 1px solid #d6ded8;
+            border-radius: 16px;
+            
             color: #35413C;
-
-            font-family:
-                'DM Sans',
-                sans-serif;
-
-            font-size: 15px;
-
-            line-height: 1.75;
-
-            transition:
-                .2s ease;
-        }
-
-        textarea::placeholder {
-
-            color: #9BA49F;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 16px;
+            line-height: 1.8;
+            
+            transition: all .2s ease;
+            box-shadow: inset 0 2px 5px rgba(0,0,0,0.015);
         }
 
         textarea:hover {
-
-            background: #edf1ed;
+            background: #f0f3f0;
+            border-color: #cbd4ce;
         }
 
         textarea:focus {
-
             outline: none;
-
             background: white;
-
-            border-color: #cbd5cf;
-
-            box-shadow:
-                0 0 0 4px
-                rgba(113,132,123,.08);
+            border-color: #a3b3a8;
+            box-shadow: 0 0 0 4px rgba(163, 179, 168, 0.15);
         }
 
         .nudge {
-
-            margin-top: 10px;
-
+            margin-top: 12px;
             font-family: 'DM Sans', sans-serif;
-
-            font-size: 13px;
-
+            font-size: 13.5px;
             line-height: 1.6;
-
-            color: #A98B5E;
-
+            color: #b05c5c; /* Warna diubah sedikit agar terbaca sebagai peringatan halus */
             display: none;
         }
 
@@ -451,7 +423,7 @@
 
             gap: 16px;
 
-            margin-top: 28px;
+            margin-top: 32px;
         }
 
         .primary {
@@ -840,15 +812,14 @@
                         Apa yang sedang membuat hidupmu terasa kusut, berat, atau tidak jelas?
                     </label>
 
-
+                    <!-- Placeholder dihapus -->
                     <textarea
                         id="q1"
                         rows="5"
-                        placeholder="Pekerjaan, uang, keluarga, hubungan, masa depan, dirimu sendiri... tulis semuanya."
                     ></textarea>
 
                     <p id="nudge-1" class="nudge">
-                        Tidak apa kalau belum tahu harus menulis apa — coba tulis satu kata saja yang muncul di kepalamu.
+                        Tolong isi bagian ini terlebih dahulu. Tuliskan apa pun yang terlintas.
                     </p>
 
                 </div>
@@ -920,15 +891,14 @@
                         Dari hal-hal yang sedang kamu kejar, mana yang benar-benar kamu inginkan — dan mana yang muncul karena ekspektasi orang lain?
                     </label>
 
-
+                    <!-- Placeholder dihapus -->
                     <textarea
                         id="q2"
                         rows="6"
-                        placeholder="Tidak perlu langsung tahu jawabannya. Tulis saja apa yang terasa benar."
                     ></textarea>
 
                     <p id="nudge-2" class="nudge">
-                        Belum yakin? Coba tulis satu hal yang terasa berat karena "seharusnya", bukan karena kamu benar-benar mau.
+                        Tolong isi bagian ini terlebih dahulu sebelum lanjut.
                     </p>
 
                 </div>
@@ -1005,15 +975,14 @@
                         Jika kamu mengesampingkan penilaian orang lain untuk sementara, hal apa yang paling ingin kamu jaga atau bangun dalam hidupmu saat ini?
                     </label>
 
-
+                    <!-- Placeholder dihapus -->
                     <textarea
                         id="q3"
                         rows="5"
-                        placeholder="Contoh: kebebasan, hubungan, keluarga, kreativitas, stabilitas, belajar, kontribusi, kesehatan, kemandirian..."
                     ></textarea>
 
                     <p id="nudge-3" class="nudge">
-                        Boleh cuma satu kata. Nilai apa yang paling terasa penting kalau kamu jujur pada dirimu sendiri?
+                        Tolong isi bagian ini terlebih dahulu sebelum lanjut.
                     </p>
 
                 </div>
@@ -1092,15 +1061,14 @@
                         Dari semua yang sudah kamu tuliskan, ke arah mana kamu ingin bergerak sekarang?
                     </label>
 
-
+                    <!-- Placeholder dihapus -->
                     <textarea
                         id="q4"
                         rows="5"
-                        placeholder="Kehidupan seperti apa yang ingin kamu dekati?"
                     ></textarea>
 
                     <p id="nudge-4" class="nudge">
-                        Tidak perlu sempurna. Tulis arah yang paling terasa benar untuk sekarang, meski masih kabur.
+                        Tolong isi bagian ini terlebih dahulu sebelum lanjut.
                     </p>
 
                 </div>
@@ -1178,15 +1146,14 @@
                         Apa satu langkah kecil yang realistis yang bisa kamu lakukan dalam beberapa hari ke depan?
                     </label>
 
-
+                    <!-- Placeholder dihapus -->
                     <textarea
                         id="q5"
                         rows="5"
-                        placeholder="Sesuatu yang bisa kamu lakukan, pelajari, mulai, hentikan, atau eksplorasi."
                     ></textarea>
 
                     <p id="nudge-5" class="nudge">
-                        Buat sekecil mungkin — sekecil apa pun tetap dihitung, asal bisa benar-benar kamu lakukan.
+                        Tolong isi bagian ini terlebih dahulu sebelum lanjut.
                     </p>
 
                 </div>
