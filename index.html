@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Ruang Tenang — Direction</title>
+    <title>Ruang Tenang — Numerology Reflection</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
 
@@ -59,10 +59,6 @@
             color: #29342F;
         }
 
-        /* =========================
-           AMBIENT
-        ========================== */
-
         .ambient {
             position: fixed;
             inset: 0;
@@ -74,11 +70,16 @@
         .ambient::before {
             content: "";
             position: absolute;
+
             width: 400px;
             height: 400px;
+
             border-radius: 50%;
+
             background: rgba(190, 210, 198, .18);
+
             filter: blur(70px);
+
             top: -180px;
             left: -120px;
         }
@@ -86,36 +87,39 @@
         .ambient::after {
             content: "";
             position: absolute;
+
             width: 350px;
             height: 350px;
+
             border-radius: 50%;
+
             background: rgba(218, 209, 190, .16);
+
             filter: blur(70px);
+
             right: -120px;
             bottom: -150px;
         }
 
-
-        /* =========================
-           LAYOUT
-        ========================== */
-
         .shell {
             width: min(100%, 720px);
+
             margin: auto;
-            padding: 32px 20px 70px;
+
+            padding:
+                32px
+                20px
+                70px;
         }
 
         @media (min-width: 640px) {
             .shell {
-                padding: 56px 24px 90px;
+                padding:
+                    56px
+                    24px
+                    90px;
             }
         }
-
-
-        /* =========================
-           BRAND
-        ========================== */
 
         .brand {
             text-align: center;
@@ -125,43 +129,50 @@
         .brand-icon {
             width: 42px;
             height: 42px;
+
             margin: 0 auto 16px;
+
             border-radius: 50%;
+
             background: #e5ebe6;
+
             display: flex;
             align-items: center;
             justify-content: center;
+
             color: #72847A;
         }
 
         .eyebrow {
             font-family: 'DM Sans', sans-serif;
+
             font-size: 11px;
+
             font-weight: 600;
+
             letter-spacing: .17em;
+
             text-transform: uppercase;
+
             color: #8A948F;
         }
 
-
-        /* =========================
-           CARD
-        ========================== */
-
         .card {
-            background: rgba(250, 250, 247, .94);
-            border: 1px solid rgba(218, 225, 220, .9);
+            background:
+                rgba(250, 250, 247, .94);
+
+            border:
+                1px solid
+                rgba(218, 225, 220, .9);
+
             border-radius: 28px;
+
             overflow: hidden;
+
             box-shadow:
                 0 25px 70px rgba(47, 59, 53, .06),
                 0 4px 14px rgba(47, 59, 53, .025);
         }
-
-
-        /* =========================
-           PROGRESS
-        ========================== */
 
         .progress-track {
             height: 3px;
@@ -170,30 +181,32 @@
 
         .progress {
             height: 100%;
-            width: 16.66%;
+
+            width: 0%;
+
             background: #87988E;
-            transition: width .7s cubic-bezier(.22,1,.36,1);
+
+            transition:
+                width
+                .7s
+                cubic-bezier(.22,1,.36,1);
         }
 
-
-        /* =========================
-           CONTENT
-        ========================== */
-
         .content {
-            padding: 34px 24px 40px;
+            padding:
+                34px
+                24px
+                40px;
         }
 
         @media (min-width: 640px) {
             .content {
-                padding: 54px 58px 58px;
+                padding:
+                    54px
+                    58px
+                    58px;
             }
         }
-
-
-        /* =========================
-           STEPS
-        ========================== */
 
         .step {
             display: none;
@@ -201,11 +214,11 @@
 
         .step.active {
             display: block;
-            animation: enter .55s cubic-bezier(.22,1,.36,1);
-        }
 
-        .step.exit {
-            animation: exit .28s ease forwards;
+            animation:
+                enter
+                .55s
+                cubic-bezier(.22,1,.36,1);
         }
 
         @keyframes enter {
@@ -213,142 +226,214 @@
                 opacity: 0;
                 transform: translateY(10px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
-
-        @keyframes exit {
-            from {
-                opacity: 1;
-                transform: translateY(0);
-            }
-            to {
-                opacity: 0;
-                transform: translateY(-8px);
-            }
-        }
-
-
-        /* =========================
-           TYPOGRAPHY
-        ========================== */
 
         .title {
-            font-family: 'Libre Baskerville', serif;
-            font-size: clamp(27px, 5vw, 38px);
+            font-family:
+                'Libre Baskerville',
+                serif;
+
+            font-size:
+                clamp(27px, 5vw, 38px);
+
             line-height: 1.38;
+
             letter-spacing: -.025em;
+
             color: #29342F;
         }
 
         .description {
-            font-family: 'DM Sans', sans-serif;
+            font-family:
+                'DM Sans',
+                sans-serif;
+
             color: #68746E;
+
             font-size: 16px;
+
             line-height: 1.85;
         }
 
         .question {
-            font-family: 'Libre Baskerville', serif;
+            font-family:
+                'Libre Baskerville',
+                serif;
+
             color: #35413C;
-            font-size: clamp(19px, 3vw, 23px);
+
+            font-size:
+                clamp(19px, 3vw, 23px);
+
             line-height: 1.65;
         }
 
+        textarea,
+        input[type="text"],
+        input[type="date"] {
+            width: 100%;
 
-        /* =========================
-           TEXTAREA
-        ========================== */
+            margin-top: 18px;
+
+            padding: 18px 20px;
+
+            background: #f1f4f1;
+
+            border:
+                1px solid
+                transparent;
+
+            border-radius: 18px;
+
+            color: #35413C;
+
+            font-family:
+                'DM Sans',
+                sans-serif;
+
+            font-size: 15px;
+
+            transition:
+                .2s ease;
+        }
 
         textarea {
-            display: block;
-            width: 100%;
-            max-width: 100%;
-            min-height: 180px;
+            min-height: 155px;
             resize: vertical;
-            margin-top: 24px !important; /* Jarak tegas dari pertanyaan */
-            padding: 20px 24px !important; /* Ruang dalam agar teks tidak mepet sudut */
-            
-            background: #fbfcfb;
-            border: 1px solid #d6ded8;
-            border-radius: 16px;
-            
-            color: #35413C;
-            font-family: 'DM Sans', sans-serif;
-            font-size: 16px;
-            line-height: 1.8;
-            
-            box-sizing: border-box;
-            transition: all .2s ease;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.015);
+            line-height: 1.75;
         }
 
-        textarea:hover {
-            background: #f4f6f4;
-            border-color: #cbd4ce;
+        input[type="date"] {
+            min-height: 55px;
         }
 
-        textarea:focus {
+        textarea::placeholder,
+        input::placeholder {
+            color: #9BA49F;
+        }
+
+        textarea:hover,
+        input:hover {
+            background: #edf1ed;
+        }
+
+        textarea:focus,
+        input:focus {
             outline: none;
+
             background: white;
-            border-color: #a3b3a8;
-            box-shadow: 0 0 0 4px rgba(163, 179, 168, 0.15);
+
+            border-color: #cbd5cf;
+
+            box-shadow:
+                0 0 0 4px
+                rgba(113,132,123,.08);
+        }
+
+        .field-label {
+            display: block;
+
+            margin-top: 20px;
+
+            font-family:
+                'DM Sans',
+                sans-serif;
+
+            font-size: 13px;
+
+            font-weight: 600;
+
+            color: #68746E;
         }
 
         .nudge {
-            margin-top: 12px;
+            margin-top: 10px;
+
             font-family: 'DM Sans', sans-serif;
-            font-size: 13.5px;
+
+            font-size: 13px;
+
             line-height: 1.6;
-            color: #b05c5c;
+
+            color: #A98B5E;
+
             display: none;
         }
 
         .nudge.show {
             display: block;
-            animation: enter .35s ease;
+
+            animation:
+                enter
+                .35s
+                ease;
         }
-
-
-        /* =========================
-           BUTTONS
-        ========================== */
 
         .button-row {
             display: flex;
+
             align-items: center;
+
             justify-content: space-between;
+
             gap: 16px;
-            margin-top: 36px; /* Jarak diperlebar agar tombol tidak mepet kotak teks */
+
+            margin-top: 28px;
         }
 
         .primary {
             border: none;
-            padding: 13px 26px;
+
+            padding:
+                13px
+                23px;
+
             border-radius: 999px;
+
             background: #35413C;
+
             color: white;
-            font-family: 'DM Sans', sans-serif;
+
+            font-family:
+                'DM Sans',
+                sans-serif;
+
             font-size: 14px;
+
             font-weight: 500;
+
             cursor: pointer;
-            transition: .18s ease;
+
+            transition:
+                .18s ease;
         }
 
         .primary:hover {
             background: #29342F;
+
             transform: translateY(-1px);
-            box-shadow: 0 8px 22px rgba(53,65,60,.12);
+
+            box-shadow:
+                0 8px 22px
+                rgba(53,65,60,.12);
         }
 
         .back {
             border: none;
+
             background: transparent;
+
             padding: 10px 0;
+
             color: #8A948F;
+
             font-size: 14px;
+
             cursor: pointer;
         }
 
@@ -356,37 +441,181 @@
             color: #35413C;
         }
 
+        .note {
+            margin-top: 18px;
+
+            padding: 14px 16px;
+
+            border-radius: 14px;
+
+            background: rgba(229,235,230,.65);
+
+            color: #7B8781;
+
+            font-family:
+                'DM Sans',
+                sans-serif;
+
+            font-size: 12px;
+
+            line-height: 1.7;
+        }
 
         /* =========================
-           FINAL
+           NUMEROLOGY PROFILE
         ========================== */
 
-        .final-icon {
-            width: 54px;
-            height: 54px;
-            margin: 0 auto 20px;
-            border-radius: 50%;
-            background: #e5ebe6;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #71847A;
+        .profile-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 12px;
+
+            margin-top: 24px;
+        }
+
+        @media (min-width: 520px) {
+            .profile-grid {
+                grid-template-columns:
+                    repeat(4, 1fr);
+            }
+        }
+
+        .number-card {
+            padding: 20px 14px;
+
+            text-align: center;
+
+            background:
+                rgba(241,244,241,.75);
+
+            border:
+                1px solid
+                #e1e7e2;
+
+            border-radius: 18px;
+        }
+
+        .number-label {
+            font-family:
+                'DM Sans',
+                sans-serif;
+
+            font-size: 10px;
+
+            line-height: 1.4;
+
+            letter-spacing: .08em;
+
+            text-transform: uppercase;
+
+            color: #8A948F;
+        }
+
+        .number-value {
+            margin-top: 8px;
+
+            font-family:
+                'Libre Baskerville',
+                serif;
+
+            font-size: 31px;
+
+            color: #35413C;
+        }
+
+        .number-name {
+            margin-top: 5px;
+
+            font-family:
+                'DM Sans',
+                sans-serif;
+
+            font-size: 11px;
+
+            color: #8A948F;
+        }
+
+        .result-block {
+            background: rgba(255,255,255,.6);
+
+            border:
+                1px solid
+                #e2e8e3;
+
+            border-radius: 16px;
+
+            padding:
+                20px
+                22px;
+
+            margin:
+                18px
+                0;
+        }
+
+        .result-label {
+            font-family:
+                'DM Sans',
+                sans-serif;
+
+            font-size: 12px;
+
+            font-weight: 600;
+
+            letter-spacing: .08em;
+
+            text-transform: uppercase;
+
+            color: #8A948F;
+
+            margin-bottom: 8px;
+        }
+
+        .result-text {
+            font-family:
+                'Libre Baskerville',
+                serif;
+
+            font-size: 17px;
+
+            line-height: 1.7;
+
+            color: #35413C;
         }
 
         .letter {
             background: #f1f4f1;
-            border: 1px solid #e2e8e3;
+
+            border:
+                1px solid
+                #e2e8e3;
+
             border-radius: 22px;
-            padding: 28px 22px;
-            font-family: 'Libre Baskerville', serif;
+
+            padding:
+                28px
+                22px;
+
+            font-family:
+                'Libre Baskerville',
+                serif;
+
             font-size: 16px;
+
             line-height: 2;
+
             color: #4D5954;
         }
 
         @media (min-width: 640px) {
             .letter {
-                padding: 38px 40px;
+                padding:
+                    38px
+                    40px;
+
                 font-size: 17px;
             }
         }
@@ -395,65 +624,80 @@
             margin-bottom: 20px;
         }
 
-        .highlight {
-            color: #35413C;
-            border-bottom: 1px solid #c5cec8;
-        }
-
-        .result-block {
-            background: rgba(255,255,255,.6);
-            border: 1px solid #e2e8e3;
-            border-radius: 16px;
-            padding: 20px 22px;
-            margin: 18px 0;
-        }
-
-        .result-label {
-            font-family: 'DM Sans', sans-serif;
-            font-size: 12px;
-            font-weight: 600;
-            letter-spacing: .08em;
-            text-transform: uppercase;
-            color: #8A948F;
-            margin-bottom: 8px;
-        }
-
-        .result-text {
-            font-family: 'Libre Baskerville', serif;
-            font-size: 17px;
-            line-height: 1.7;
-            color: #35413C;
-        }
-
         blockquote {
-            margin: 26px 0;
-            padding: 18px 20px;
-            border-left: 2px solid #aab8b0;
-            background: rgba(255,255,255,.45);
-            border-radius: 0 12px 12px 0;
+            margin:
+                26px
+                0;
+
+            padding:
+                18px
+                20px;
+
+            border-left:
+                2px
+                solid
+                #aab8b0;
+
+            background:
+                rgba(255,255,255,.45);
+
+            border-radius:
+                0
+                12px
+                12px
+                0;
+
             color: #59655F;
+
             font-style: italic;
         }
 
+        .final-icon {
+            width: 54px;
+            height: 54px;
 
-        /* =========================
-           FOOTER
-        ========================== */
+            margin:
+                0
+                auto
+                20px;
+
+            border-radius: 50%;
+
+            background: #e5ebe6;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            color: #71847A;
+        }
 
         .footer {
             margin-top: 24px;
+
             text-align: center;
+
             color: #9AA39E;
+
             font-size: 12px;
+
             line-height: 1.7;
         }
 
         .new {
             margin-top: 8px;
+
             border: none;
-            border-bottom: 1px solid #cbd4ce;
+
+            border-bottom:
+                1px
+                solid
+                #cbd4ce;
+
             background: transparent;
+
             color: #718079;
+
             cursor: pointer;
         }
 
@@ -462,24 +706,39 @@
         }
 
         .saved-note {
-            font-family: 'DM Sans', sans-serif;
+            font-family:
+                'DM Sans',
+                sans-serif;
+
             font-size: 12px;
+
             color: #9AA39E;
+
             text-align: center;
+
             margin-top: 14px;
+
             opacity: 0;
-            transition: opacity .4s ease;
+
+            transition:
+                opacity
+                .4s
+                ease;
         }
 
         .saved-note.show {
             opacity: 1;
         }
 
-
         @media (prefers-reduced-motion: reduce) {
-            *, *::before, *::after {
-                animation-duration: .01ms !important;
-                transition-duration: .01ms !important;
+            *,
+            *::before,
+            *::after {
+                animation-duration:
+                    .01ms !important;
+
+                transition-duration:
+                    .01ms !important;
             }
         }
 
@@ -494,341 +753,904 @@
 
 <main class="shell">
 
-
-    <!-- =========================
-         BRAND
-    ========================== -->
+    <!-- BRAND -->
 
     <header class="brand">
+
         <div class="brand-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M12 3C9 7 7 10.5 7 14a5 5 0 0 0 10 0c0-3.5-2-7-5-11Z" />
-                <path d="M12 21v-5" />
+
+            <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+            >
+                <path
+                    d="M12 3C9 7 7 10.5 7 14a5 5 0 0 0 10 0c0-3.5-2-7-5-11Z"
+                />
+
+                <path
+                    d="M12 21v-5"
+                />
             </svg>
+
         </div>
+
         <div class="eyebrow mb-2">
             Ruang Tenang
         </div>
+
         <p class="text-sm text-[#89938E]">
-            Find your direction, one step at a time.
+            Discover your direction, one step at a time.
         </p>
+
     </header>
 
-
-    <!-- =========================
-         JOURNAL CARD
-    ========================== -->
 
     <section class="card">
 
         <div class="progress-track">
-            <div id="progress" class="progress"></div>
+            <div
+                id="progress"
+                class="progress"
+            ></div>
         </div>
 
 
         <div class="content">
 
-            <!-- ==================================================
-                 STEP 1 — PAUSE
-            =================================================== -->
 
-            <div id="step-1" class="step active">
+            <!-- ==================================================
+                 STEP 1 — IDENTITY
+            ================================================== -->
+
+            <div
+                id="step-1"
+                class="step active"
+            >
 
                 <div class="mb-10">
+
+                    <div class="eyebrow mb-4">
+                        Begin · About You
+                    </div>
+
+                    <h1 class="title mb-5">
+                        Mari mulai dari<br>
+                        siapa dirimu.
+                    </h1>
+
+                    <div class="description">
+
+                        <p>
+                            Sebelum melihat arah yang ingin kamu tuju,
+                            kita akan mengenal beberapa hal dasar tentangmu.
+                        </p>
+
+                        <p class="mt-3">
+                            Nama dan tanggal lahir akan digunakan untuk
+                            menghitung profil numerology Pythagorean-mu.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div>
+
+                    <label
+                        for="fullName"
+                        class="field-label"
+                    >
+                        Nama lengkap
+                    </label>
+
+                    <input
+                        id="fullName"
+                        type="text"
+                        autocomplete="name"
+                        placeholder="Masukkan nama lengkapmu"
+                    >
+
+
+                    <label
+                        for="birthDate"
+                        class="field-label"
+                    >
+                        Tanggal lahir
+                    </label>
+
+                    <input
+                        id="birthDate"
+                        type="date"
+                        autocomplete="bday"
+                    >
+
+                    <p
+                        id="nudge-1"
+                        class="nudge"
+                    >
+                        Isi nama lengkap dan tanggal lahir terlebih dahulu.
+                    </p>
+
+
+                    <div class="note">
+
+                        Numerology adalah sistem interpretatif
+                        berdasarkan tradisi angka. Hasil di halaman ini
+                        bukan diagnosis ilmiah atau prediksi pasti tentang
+                        kepribadian maupun masa depan.
+
+                    </div>
+
+                </div>
+
+
+                <div class="button-row justify-end">
+
+                    <button
+                        onclick="startNumerology()"
+                        class="primary"
+                    >
+                        Lihat profilku →
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==================================================
+                 STEP 2 — NUMEROLOGY
+            ================================================== -->
+
+            <div
+                id="step-2"
+                class="step"
+            >
+
+                <div class="mb-8">
+
+                    <div class="eyebrow mb-4">
+                        Your Numbers
+                    </div>
+
+                    <h1 class="title mb-5">
+                        Profil numerology<br>
+                        untuk <span id="profile-name">kamu</span>.
+                    </h1>
+
+                    <div class="description">
+
+                        <p>
+                            Dalam tradisi Pythagorean numerology,
+                            beberapa angka dari nama dan tanggal lahir
+                            digunakan sebagai bagian dari interpretasi diri.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="profile-grid">
+
+                    <div class="number-card">
+
+                        <div class="number-label">
+                            Life Path
+                        </div>
+
+                        <div
+                            id="life-path"
+                            class="number-value"
+                        >
+                            —
+                        </div>
+
+                        <div class="number-name">
+                            Jalan hidup
+                        </div>
+
+                    </div>
+
+
+                    <div class="number-card">
+
+                        <div class="number-label">
+                            Birthday
+                        </div>
+
+                        <div
+                            id="birthday-number"
+                            class="number-value"
+                        >
+                            —
+                        </div>
+
+                        <div class="number-name">
+                            Hari lahir
+                        </div>
+
+                    </div>
+
+
+                    <div class="number-card">
+
+                        <div class="number-label">
+                            Expression
+                        </div>
+
+                        <div
+                            id="expression-number"
+                            class="number-value"
+                        >
+                            —
+                        </div>
+
+                        <div class="number-name">
+                            Destiny
+                        </div>
+
+                    </div>
+
+
+                    <div class="number-card">
+
+                        <div class="number-label">
+                            Soul Urge
+                        </div>
+
+                        <div
+                            id="soul-urge-number"
+                            class="number-value"
+                        >
+                            —
+                        </div>
+
+                        <div class="number-name">
+                            Inner self
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    id="numerology-summary"
+                    class="result-block"
+                >
+                    <div class="result-label">
+                        Life Path
+                    </div>
+
+                    <div
+                        id="life-path-description"
+                        class="result-text"
+                    >
+                        —
+                    </div>
+                </div>
+
+
+                <div class="button-row">
+
+                    <button
+                        onclick="goToStep(1)"
+                        class="back"
+                    >
+                        ← Kembali
+                    </button>
+
+
+                    <button
+                        onclick="goToStep(3)"
+                        class="primary"
+                    >
+                        Lanjut →
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==================================================
+                 STEP 3 — PAUSE
+            ================================================== -->
+
+            <div
+                id="step-3"
+                class="step"
+            >
+
+                <div class="mb-10">
+
                     <div class="eyebrow mb-4">
                         01 / 05 · Pause
                     </div>
+
                     <h1 class="title mb-5">
                         Sebelum mencari arah,<br>
                         berhenti sebentar.
                     </h1>
+
                     <div class="description">
+
                         <p>
                             Kadang kita terlalu lama bergerak
                             sampai lupa bertanya apakah kita
                             masih berjalan ke tempat yang kita inginkan.
                         </p>
+
                         <p class="mt-3">
                             Untuk beberapa menit ini,
                             kamu tidak perlu memperbaiki hidupmu.
                             Cukup keluarkan apa yang sedang
                             memenuhi kepalamu.
                         </p>
+
                     </div>
+
                 </div>
+
 
                 <div>
-                    <label for="q1" class="question block">
-                        Apa yang sedang membuat hidupmu terasa kusut, berat, atau tidak jelas?
+
+                    <label
+                        for="q1"
+                        class="question block"
+                    >
+                        Apa yang sedang membuat hidupmu terasa kusut,
+                        berat, atau tidak jelas?
                     </label>
 
-                    <textarea id="q1"></textarea>
+                    <textarea
+                        id="q1"
+                        rows="5"
+                        placeholder="Pekerjaan, uang, keluarga, hubungan, masa depan, dirimu sendiri..."
+                    ></textarea>
 
-                    <p id="nudge-1" class="nudge">
-                        Tolong isi bagian ini terlebih dahulu. Tuliskan apa pun yang terlintas.
+                    <p
+                        id="nudge-3"
+                        class="nudge"
+                    >
+                        Tidak apa kalau belum tahu harus menulis apa —
+                        coba tulis satu kata saja.
                     </p>
+
                 </div>
 
+
                 <div class="button-row justify-end">
-                    <button onclick="attemptNext(1, 2)" class="primary">
+
+                    <button
+                        onclick="attemptNext(3, 4)"
+                        class="primary"
+                    >
                         Lanjut →
                     </button>
+
                 </div>
 
             </div>
 
 
             <!-- ==================================================
-                 STEP 2 — UNTANGLE
-            =================================================== -->
+                 STEP 4 — UNTANGLE
+            ================================================== -->
 
-            <div id="step-2" class="step">
+            <div
+                id="step-4"
+                class="step"
+            >
 
                 <div class="mb-10">
+
                     <div class="eyebrow mb-4">
                         02 / 05 · Untangle
                     </div>
+
                     <h1 class="title mb-5">
                         Tidak semua suara di kepalamu<br>
                         adalah keinginanmu.
                     </h1>
+
                     <div class="description">
+
                         <p>
                             Kadang kita mengejar sesuatu bukan
                             karena benar-benar menginginkannya,
                             tetapi karena merasa seharusnya
                             menginginkannya.
                         </p>
+
                         <p class="mt-3">
                             Ekspektasi keluarga, usia,
                             teman sebaya, media sosial,
-                            atau gambaran tentang seperti apa
-                            hidup yang “seharusnya”.
+                            atau gambaran tentang hidup yang
+                            “seharusnya”.
                         </p>
+
                     </div>
+
                 </div>
+
 
                 <div>
-                    <label for="q2" class="question block">
-                        Dari hal-hal yang sedang kamu kejar, mana yang benar-benar kamu inginkan — dan mana yang muncul karena ekspektasi orang lain?
+
+                    <label
+                        for="q2"
+                        class="question block"
+                    >
+                        Dari hal-hal yang sedang kamu kejar,
+                        mana yang benar-benar kamu inginkan —
+                        dan mana yang muncul karena ekspektasi
+                        orang lain?
                     </label>
 
-                    <textarea id="q2"></textarea>
+                    <textarea
+                        id="q2"
+                        rows="6"
+                        placeholder="Tulis apa yang terasa benar."
+                    ></textarea>
 
-                    <p id="nudge-2" class="nudge">
-                        Tolong isi bagian ini terlebih dahulu sebelum lanjut.
+                    <p
+                        id="nudge-4"
+                        class="nudge"
+                    >
+                        Coba tulis satu hal yang terasa berat karena
+                        “seharusnya”, bukan karena kamu benar-benar mau.
                     </p>
+
                 </div>
 
+
                 <div class="button-row">
-                    <button onclick="goToStep(1)" class="back">
+
+                    <button
+                        onclick="goToStep(3)"
+                        class="back"
+                    >
                         ← Kembali
                     </button>
-                    <button onclick="attemptNext(2, 3)" class="primary">
+
+                    <button
+                        onclick="attemptNext(4, 5)"
+                        class="primary"
+                    >
                         Lanjut →
                     </button>
+
                 </div>
 
             </div>
 
 
             <!-- ==================================================
-                 STEP 3 — WHAT MATTERS
-            =================================================== -->
+                 STEP 5 — WHAT MATTERS
+            ================================================== -->
 
-            <div id="step-3" class="step">
+            <div
+                id="step-5"
+                class="step"
+            >
 
                 <div class="mb-10">
+
                     <div class="eyebrow mb-4">
                         03 / 05 · What Matters
                     </div>
+
                     <h1 class="title mb-5">
                         Apa yang penting bagimu<br>
                         sekarang?
                     </h1>
+
                     <div class="description">
+
                         <p>
                             Arah yang sehat biasanya berangkat dari nilai,
                             bukan sekadar ambisi atau tekanan.
                         </p>
+
                         <p class="mt-3">
                             Jika kamu mengesampingkan penilaian orang lain
                             untuk sementara, apa yang paling ingin kamu
                             jaga atau bangun dalam hidupmu saat ini?
                         </p>
+
                     </div>
+
                 </div>
+
 
                 <div>
-                    <label for="q3" class="question block">
-                        Jika kamu mengesampingkan penilaian orang lain untuk sementara, hal apa yang paling ingin kamu jaga atau bangun dalam hidupmu saat ini?
+
+                    <label
+                        for="q3"
+                        class="question block"
+                    >
+                        Hal apa yang paling ingin kamu jaga
+                        atau bangun dalam hidupmu saat ini?
                     </label>
 
-                    <textarea id="q3"></textarea>
+                    <textarea
+                        id="q3"
+                        rows="5"
+                        placeholder="Kebebasan, hubungan, keluarga, kreativitas, stabilitas, belajar, kontribusi, kesehatan..."
+                    ></textarea>
 
-                    <p id="nudge-3" class="nudge">
-                        Tolong isi bagian ini terlebih dahulu sebelum lanjut.
+                    <p
+                        id="nudge-5"
+                        class="nudge"
+                    >
+                        Boleh cuma satu kata.
                     </p>
+
                 </div>
 
+
                 <div class="button-row">
-                    <button onclick="goToStep(2)" class="back">
+
+                    <button
+                        onclick="goToStep(4)"
+                        class="back"
+                    >
                         ← Kembali
                     </button>
-                    <button onclick="attemptNext(3, 4)" class="primary">
+
+                    <button
+                        onclick="attemptNext(5, 6)"
+                        class="primary"
+                    >
                         Lanjut →
                     </button>
+
                 </div>
 
             </div>
 
 
             <!-- ==================================================
-                 STEP 4 — DIRECTION
-            =================================================== -->
+                 STEP 6 — DIRECTION
+            ================================================== -->
 
-            <div id="step-4" class="step">
+            <div
+                id="step-6"
+                class="step"
+            >
 
                 <div class="mb-10">
+
                     <div class="eyebrow mb-4">
                         04 / 05 · Direction
                     </div>
+
                     <h1 class="title mb-5">
                         Kamu tidak harus tahu<br>
                         seluruh jalan.
                     </h1>
+
                     <div class="description">
+
                         <p>
                             Kita tidak mencari “tujuan hidup”.
                             Kita hanya mencari sesuatu yang terasa
                             sedikit lebih dekat dengan kehidupan
                             yang kamu inginkan.
                         </p>
+
                         <p class="mt-3">
                             Bukan “Apa tujuan hidupmu?”,
                             tapi “Kehidupan seperti apa yang ingin
                             kamu dekati?”
                         </p>
+
                     </div>
+
                 </div>
+
 
                 <div>
-                    <label for="q4" class="question block">
-                        Dari semua yang sudah kamu tuliskan, ke arah mana kamu ingin bergerak sekarang?
+
+                    <label
+                        for="q4"
+                        class="question block"
+                    >
+                        Dari semua yang sudah kamu tuliskan,
+                        ke arah mana kamu ingin bergerak sekarang?
                     </label>
 
-                    <textarea id="q4"></textarea>
+                    <textarea
+                        id="q4"
+                        rows="5"
+                        placeholder="Kehidupan seperti apa yang ingin kamu dekati?"
+                    ></textarea>
 
-                    <p id="nudge-4" class="nudge">
-                        Tolong isi bagian ini terlebih dahulu sebelum lanjut.
+                    <p
+                        id="nudge-6"
+                        class="nudge"
+                    >
+                        Tidak perlu sempurna. Tulis arah yang
+                        paling terasa benar untuk sekarang.
                     </p>
+
                 </div>
 
+
                 <div class="button-row">
-                    <button onclick="goToStep(3)" class="back">
+
+                    <button
+                        onclick="goToStep(5)"
+                        class="back"
+                    >
                         ← Kembali
                     </button>
-                    <button onclick="attemptNext(4, 5)" class="primary">
+
+                    <button
+                        onclick="attemptNext(6, 7)"
+                        class="primary"
+                    >
                         Lanjut →
                     </button>
+
                 </div>
 
             </div>
 
 
             <!-- ==================================================
-                 STEP 5 — ONE STEP
-            =================================================== -->
+                 STEP 7 — ONE STEP
+            ================================================== -->
 
-            <div id="step-5" class="step">
+            <div
+                id="step-7"
+                class="step"
+            >
 
                 <div class="mb-10">
+
                     <div class="eyebrow mb-4">
                         05 / 05 · One Step
                     </div>
+
                     <h1 class="title mb-5">
                         Arah menjadi nyata<br>
                         ketika kamu mulai bergerak.
                     </h1>
+
                     <div class="description">
+
                         <p>
                             Satu langkah kecil yang realistis
                             sering kali lebih berharga daripada
                             rencana besar yang tidak pernah dimulai.
                         </p>
+
                         <p class="mt-3">
                             Yang kita cari bukan jawaban untuk
                             seluruh hidupmu. Hanya sesuatu yang
                             bisa kamu lakukan dalam beberapa hari ke depan.
                         </p>
+
                     </div>
+
                 </div>
+
 
                 <div>
-                    <label for="q5" class="question block">
-                        Apa satu langkah kecil yang realistis yang bisa kamu lakukan dalam beberapa hari ke depan?
+
+                    <label
+                        for="q5"
+                        class="question block"
+                    >
+                        Apa satu langkah kecil yang realistis
+                        yang bisa kamu lakukan dalam beberapa hari ke depan?
                     </label>
 
-                    <textarea id="q5"></textarea>
+                    <textarea
+                        id="q5"
+                        rows="5"
+                        placeholder="Sesuatu yang bisa kamu lakukan, pelajari, mulai, hentikan, atau eksplorasi."
+                    ></textarea>
 
-                    <p id="nudge-5" class="nudge">
-                        Tolong isi bagian ini terlebih dahulu sebelum lanjut.
+                    <p
+                        id="nudge-7"
+                        class="nudge"
+                    >
+                        Buat sekecil mungkin — asal benar-benar
+                        bisa kamu lakukan.
                     </p>
+
                 </div>
 
+
                 <div class="button-row">
-                    <button onclick="goToStep(4)" class="back">
+
+                    <button
+                        onclick="goToStep(6)"
+                        class="back"
+                    >
                         ← Kembali
                     </button>
-                    <button onclick="generateResult()" class="primary">
+
+                    <button
+                        onclick="generateResult()"
+                        class="primary"
+                    >
                         Simpan refleksi ♡
                     </button>
+
                 </div>
 
             </div>
 
 
             <!-- ==================================================
-                 STEP 6 — RESULT
-            =================================================== -->
+                 STEP 8 — RESULT
+            ================================================== -->
 
-            <div id="step-6" class="step">
+            <div
+                id="step-8"
+                class="step"
+            >
 
                 <div class="text-center mb-10">
+
                     <div class="final-icon">
-                        <svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M12 3C9 7 7 10.5 7 14a5 5 0 0 0 10 0c0-3.5-2-7-5-11Z" />
-                            <path d="M12 21v-5" />
+
+                        <svg
+                            width="25"
+                            height="25"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.5"
+                        >
+
+                            <path
+                                d="M12 3C9 7 7 10.5 7 14a5 5 0 0 0 10 0c0-3.5-2-7-5-11Z"
+                            />
+
+                            <path
+                                d="M12 21v-5"
+                            />
+
                         </svg>
+
                     </div>
+
+
                     <div class="eyebrow mb-3">
                         Your Direction
                     </div>
+
+
                     <h1 class="title text-2xl sm:text-3xl">
                         Untuk sekarang,<br>
                         kamu ingin bergerak ke arah…
                     </h1>
+
                 </div>
 
-                <article class="letter">
-                    <div class="result-block">
-                        <div class="result-label">Arah yang kamu pilih</div>
-                        <div class="result-text" id="result-direction">
+
+                <div class="profile-grid">
+
+                    <div class="number-card">
+
+                        <div class="number-label">
+                            Life Path
+                        </div>
+
+                        <div
+                            id="result-life-path"
+                            class="number-value"
+                        >
                             —
                         </div>
+
                     </div>
 
-                    <div class="result-block">
-                        <div class="result-label">Langkah kecil pertamamu</div>
-                        <div class="result-text" id="result-step">
+
+                    <div class="number-card">
+
+                        <div class="number-label">
+                            Birthday
+                        </div>
+
+                        <div
+                            id="result-birthday"
+                            class="number-value"
+                        >
                             —
                         </div>
+
                     </div>
 
-                    <p class="mt-8">
+
+                    <div class="number-card">
+
+                        <div class="number-label">
+                            Expression
+                        </div>
+
+                        <div
+                            id="result-expression"
+                            class="number-value"
+                        >
+                            —
+                        </div>
+
+                    </div>
+
+
+                    <div class="number-card">
+
+                        <div class="number-label">
+                            Soul Urge
+                        </div>
+
+                        <div
+                            id="result-soul"
+                            class="number-value"
+                        >
+                            —
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <article class="letter mt-6">
+
+                    <div class="result-block">
+
+                        <div class="result-label">
+                            Arah yang kamu pilih
+                        </div>
+
+                        <div
+                            class="result-text"
+                            id="result-direction"
+                        >
+                            —
+                        </div>
+
+                    </div>
+
+
+                    <div class="result-block">
+
+                        <div class="result-label">
+                            Langkah kecil pertamamu
+                        </div>
+
+                        <div
+                            class="result-text"
+                            id="result-step"
+                        >
+                            —
+                        </div>
+
+                    </div>
+
+
+                    <p id="personal-reading">
+                        —
+                    </p>
+
+
+                    <p>
                         Kamu tidak harus tahu ke mana hidupmu akan berakhir.
                         Untuk sekarang, cukup memahami ke mana kamu ingin bergerak.
                     </p>
+
 
                     <p>
                         Kamu boleh berubah pikiran.
@@ -837,35 +1659,54 @@
                         Kamu boleh berjalan pelan.
                     </p>
 
-                    <p>
-                        Arah tidak selalu ditemukan sebelum kita berjalan.
-                        Kadang arah justru menjadi jelas setelah kita mulai melangkah.
-                    </p>
 
                     <blockquote>
                         “The good life is a process, not a state of being.”
                         <br>
-                        <span style="font-style: normal; font-size: 14px; opacity: .8;">— Carl Rogers</span>
+
+                        <span
+                            style="
+                                font-style: normal;
+                                font-size: 14px;
+                                opacity: .8;
+                            "
+                        >
+                            — Carl Rogers
+                        </span>
                     </blockquote>
+
 
                     <p class="mb-0">
                         Jadi untuk hari ini, jangan paksa dirimu menemukan
                         seluruh masa depan. Satu langkah sudah cukup.
                     </p>
+
                 </article>
 
-                <p id="saved-note" class="saved-note">
-                    Refleksi ini tersimpan di perangkatmu, dan jawabanmu juga
-                    diteruskan ke pembuat ruang ini.
+
+                <p
+                    id="saved-note"
+                    class="saved-note"
+                >
+                    Refleksi ini tersimpan di perangkatmu,
+                    dan jawabanmu diteruskan ke pembuat ruang ini.
                 </p>
 
+
                 <div class="footer">
+
                     Kamu tidak harus mengetahui
                     seluruh jalan hari ini.
+
                     <br>
-                    <button onclick="newJournal()" class="new">
+
+                    <button
+                        onclick="newJournal()"
+                        class="new"
+                    >
                         Mulai refleksi baru
                     </button>
+
                 </div>
 
             </div>
@@ -874,9 +1715,12 @@
 
     </section>
 
+
     <div class="footer">
+
         Ruang Tenang · sebuah tempat untuk berhenti,
         mengurai, dan melangkah lagi.
+
     </div>
 
 </main>
@@ -884,213 +1728,1114 @@
 
 <script>
 
+    /* =========================================================
+       STATE
+    ========================================================= */
+
     let currentStep = 1;
-    const totalSteps = 6;
-    const STORAGE_KEY = 'ruang-tenang:latest';
+
+    const reflectionSteps = 7;
+
+    let numerology = {
+        fullName: "",
+        birthDate: "",
+        lifePath: null,
+        birthday: null,
+        expression: null,
+        soulUrge: null
+    };
 
 
-    /* =========================
-       PERSISTENCE
-    ========================== */
+    /* =========================================================
+       LOCAL DRAFT
+       Hanya menyimpan jawaban refleksi.
+       Nama + tanggal lahir TIDAK disimpan.
+    ========================================================= */
+
+    const STORAGE_KEY =
+        'ruang-tenang:reflection';
+
 
     function saveDraft() {
+
         const data = {
-            q1: document.getElementById('q1').value,
-            q2: document.getElementById('q2').value,
-            q3: document.getElementById('q3').value,
-            q4: document.getElementById('q4').value,
-            q5: document.getElementById('q5').value,
-            updatedAt: new Date().toISOString()
+
+            q1:
+                document
+                    .getElementById('q1')
+                    .value,
+
+            q2:
+                document
+                    .getElementById('q2')
+                    .value,
+
+            q3:
+                document
+                    .getElementById('q3')
+                    .value,
+
+            q4:
+                document
+                    .getElementById('q4')
+                    .value,
+
+            q5:
+                document
+                    .getElementById('q5')
+                    .value,
+
+            updatedAt:
+                new Date().toISOString()
+
         };
+
+
         try {
-            localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+
+            localStorage.setItem(
+                STORAGE_KEY,
+                JSON.stringify(data)
+            );
+
         } catch (err) {
-            console.error('Gagal menyimpan draf:', err);
+
+            console.error(
+                'Gagal menyimpan draft:',
+                err
+            );
+
         }
+
     }
+
 
     function loadDraft() {
+
         try {
-            const raw = localStorage.getItem(STORAGE_KEY);
-            if (!raw) return;
-            const data = JSON.parse(raw);
-            ['q1', 'q2', 'q3', 'q4', 'q5'].forEach(id => {
-                if (data[id]) {
-                    document.getElementById(id).value = data[id];
-                }
-            });
-        } catch (err) {}
-    }
 
-    function clearDraft() {
-        try {
-            localStorage.removeItem(STORAGE_KEY);
-        } catch (err) {}
-    }
+            const raw =
+                localStorage.getItem(
+                    STORAGE_KEY
+                );
 
-
-    /* =========================
-       SUBMIT
-    ========================== */
-
-    async function submitReflection(direction, nextStep) {
-        const data = {
-            q1: document.getElementById('q1').value.trim(),
-            q2: document.getElementById('q2').value.trim(),
-            q3: document.getElementById('q3').value.trim(),
-            q4: document.getElementById('q4').value.trim(),
-            q5: document.getElementById('q5').value.trim(),
-            direction: direction,
-            nextStep: nextStep,
-            submittedAt: new Date().toISOString()
-        };
-        try {
-            await fetch('/api/submit', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(data)
-            });
-        } catch (err) {
-            console.error('Gagal mengirim refleksi:', err);
-        }
-    }
-
-
-    /* =========================
-       VALIDATION
-    ========================== */
-
-    function attemptNext(fromStep, toStep) {
-        const textarea = document.getElementById(`q${fromStep}`);
-        const nudge = document.getElementById(`nudge-${fromStep}`);
-
-        if (textarea.value.trim().length === 0) {
-            nudge.classList.add('show');
-            textarea.focus();
-            return;
-        }
-
-        nudge.classList.remove('show');
-        goToStep(toStep);
-    }
-
-
-    /* =========================
-       NAVIGATION
-    ========================== */
-
-    function goToStep(step) {
-        if (step === currentStep) return;
-
-        const current = document.getElementById(`step-${currentStep}`);
-        const next = document.getElementById(`step-${step}`);
-        const progress = document.getElementById('progress');
-
-        current.classList.remove('active');
-        current.classList.add('exit');
-
-        setTimeout(() => {
-            current.classList.remove('exit');
-            current.style.display = 'none';
-
-            next.style.display = 'block';
-            void next.offsetWidth;
-            next.classList.add('active');
-
-            currentStep = step;
-            const percentage = (step / totalSteps) * 100;
-            progress.style.width = `${percentage}%`;
-
-            const textarea = next.querySelector('textarea');
-            if (textarea) {
-                setTimeout(() => {
-                    textarea.focus();
-                }, 350);
+            if (!raw) {
+                return;
             }
 
-            saveDraft();
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }, 280);
-    }
+            const data =
+                JSON.parse(raw);
 
 
-    /* =========================
-       GENERATE RESULT
-    ========================== */
+            [
+                'q1',
+                'q2',
+                'q3',
+                'q4',
+                'q5'
+            ].forEach(id => {
 
-    async function generateResult() {
-        const step5Textarea = document.getElementById('q5');
+                if (data[id]) {
 
-        if (step5Textarea.value.trim().length === 0) {
-            document.getElementById('nudge-5').classList.add('show');
-            step5Textarea.focus();
-            return;
+                    document
+                        .getElementById(id)
+                        .value = data[id];
+
+                }
+
+            });
+
+        } catch (err) {
+
+            console.error(
+                'Gagal memuat draft:',
+                err
+            );
+
         }
 
-        let direction = document.getElementById('q4').value.trim();
-        let nextStep = document.getElementById('q5').value.trim();
+    }
 
-        if (!direction) direction = "kehidupan yang terasa lebih selaras dengan diriku";
-        if (!nextStep) nextStep = "satu langkah kecil yang realistis";
 
-        direction = limitText(direction, 280);
-        nextStep = limitText(nextStep, 280);
+    function clearDraft() {
 
-        document.getElementById('result-direction').innerText = direction;
-        document.getElementById('result-step').innerText = nextStep;
+        try {
 
-        await saveDraft();
-        await submitReflection(direction, nextStep);
+            localStorage.removeItem(
+                STORAGE_KEY
+            );
 
-        goToStep(6);
+        } catch (err) {
 
-        const savedNote = document.getElementById('saved-note');
+            console.error(
+                'Gagal menghapus draft:',
+                err
+            );
+
+        }
+
+    }
+
+
+    /* =========================================================
+       PYTHAGOREAN NUMEROLOGY
+    ========================================================= */
+
+    const letterValues = {
+
+        A: 1,
+        B: 2,
+        C: 3,
+        D: 4,
+        E: 5,
+        F: 6,
+        G: 7,
+        H: 8,
+        I: 9,
+
+        J: 1,
+        K: 2,
+        L: 3,
+        M: 4,
+        N: 5,
+        O: 6,
+        P: 7,
+        Q: 8,
+        R: 9,
+
+        S: 1,
+        T: 2,
+        U: 3,
+        V: 4,
+        W: 5,
+        X: 6,
+        Y: 7,
+        Z: 8
+
+    };
+
+
+    const vowels = [
+        'A',
+        'E',
+        'I',
+        'O',
+        'U'
+    ];
+
+
+    function reduceNumber(number) {
+
+        number = Math.abs(
+            parseInt(number, 10)
+        );
+
+
+        while (
+            number > 9 &&
+            number !== 11 &&
+            number !== 22 &&
+            number !== 33
+        ) {
+
+            number =
+                String(number)
+                    .split('')
+                    .reduce(
+                        (sum, digit) =>
+                            sum + Number(digit),
+                        0
+                    );
+
+        }
+
+
+        return number;
+
+    }
+
+
+    function calculateLifePath(dateString) {
+
+        const digits =
+            dateString
+                .replace(/\D/g, '')
+                .split('')
+                .map(Number);
+
+
+        const total =
+            digits.reduce(
+                (sum, digit) =>
+                    sum + digit,
+                0
+            );
+
+
+        return reduceNumber(total);
+
+    }
+
+
+    function calculateBirthday(dateString) {
+
+        const day =
+            Number(
+                dateString
+                    .split('-')[2]
+            );
+
+
+        return reduceNumber(day);
+
+    }
+
+
+    function calculateExpression(name) {
+
+        const cleanName =
+            name
+                .toUpperCase()
+                .replace(/[^A-Z]/g, '');
+
+
+        let total = 0;
+
+
+        for (
+            const letter of cleanName
+        ) {
+
+            if (
+                letterValues[letter]
+            ) {
+
+                total +=
+                    letterValues[letter];
+
+            }
+
+        }
+
+
+        return reduceNumber(total);
+
+    }
+
+
+    function calculateSoulUrge(name) {
+
+        const cleanName =
+            name
+                .toUpperCase()
+                .replace(/[^A-Z]/g, '');
+
+
+        let total = 0;
+
+
+        for (
+            const letter of cleanName
+        ) {
+
+            if (
+                vowels.includes(letter)
+            ) {
+
+                total +=
+                    letterValues[letter];
+
+            }
+
+        }
+
+
+        return reduceNumber(total);
+
+    }
+
+
+    /* =========================================================
+       NUMEROLOGY DESCRIPTIONS
+    ========================================================= */
+
+    const lifePathDescriptions = {
+
+        1:
+            "Dalam tradisi numerology, Life Path 1 sering diasosiasikan dengan kemandirian, inisiatif, keberanian memulai, dan dorongan untuk membangun jalannya sendiri.",
+
+        2:
+            "Dalam tradisi numerology, Life Path 2 sering diasosiasikan dengan kerja sama, sensitivitas, keseimbangan, hubungan, dan kemampuan memahami orang lain.",
+
+        3:
+            "Dalam tradisi numerology, Life Path 3 sering diasosiasikan dengan ekspresi diri, komunikasi, kreativitas, dan kemampuan membawa energi ke dalam lingkungan.",
+
+        4:
+            "Dalam tradisi numerology, Life Path 4 sering diasosiasikan dengan struktur, ketekunan, stabilitas, disiplin, dan membangun sesuatu secara bertahap.",
+
+        5:
+            "Dalam tradisi numerology, Life Path 5 sering diasosiasikan dengan kebebasan, perubahan, pengalaman baru, rasa ingin tahu, dan fleksibilitas.",
+
+        6:
+            "Dalam tradisi numerology, Life Path 6 sering diasosiasikan dengan kepedulian, tanggung jawab, hubungan, keseimbangan, dan keinginan menciptakan lingkungan yang harmonis.",
+
+        7:
+            "Dalam tradisi numerology, Life Path 7 sering diasosiasikan dengan introspeksi, pencarian pemahaman, kedalaman berpikir, dan kebutuhan akan ruang untuk merenung.",
+
+        8:
+            "Dalam tradisi numerology, Life Path 8 sering diasosiasikan dengan ambisi, pengelolaan sumber daya, pencapaian, tanggung jawab, dan hubungan dengan dunia material.",
+
+        9:
+            "Dalam tradisi numerology, Life Path 9 sering diasosiasikan dengan kemanusiaan, empati, perspektif luas, idealisme, dan keinginan memberikan sesuatu kepada orang lain.",
+
+        11:
+            "Dalam tradisi numerology, Master Number 11 sering diasosiasikan dengan intuisi, sensitivitas, inspirasi, dan pencarian makna yang lebih dalam.",
+
+        22:
+            "Dalam tradisi numerology, Master Number 22 sering diasosiasikan dengan kemampuan mengubah gagasan besar menjadi sesuatu yang konkret dan terstruktur.",
+
+        33:
+            "Dalam tradisi numerology, Master Number 33 sering diasosiasikan dengan kepedulian, pengajaran, pelayanan, dan dorongan untuk memberi dampak positif kepada orang lain."
+
+    };
+
+
+    /* =========================================================
+       START NUMEROLOGY
+    ========================================================= */
+
+    function startNumerology() {
+
+        const name =
+            document
+                .getElementById('fullName')
+                .value
+                .trim();
+
+
+        const birthDate =
+            document
+                .getElementById('birthDate')
+                .value;
+
+
+        const nudge =
+            document
+                .getElementById('nudge-1');
+
+
+        if (
+            !name ||
+            !birthDate
+        ) {
+
+            nudge.classList.add(
+                'show'
+            );
+
+            return;
+
+        }
+
+
+        if (
+            name.length < 2
+        ) {
+
+            nudge.textContent =
+                'Masukkan nama lengkapmu terlebih dahulu.';
+
+            nudge.classList.add(
+                'show'
+            );
+
+            return;
+
+        }
+
+
+        numerology.fullName =
+            name;
+
+        numerology.birthDate =
+            birthDate;
+
+
+        numerology.lifePath =
+            calculateLifePath(
+                birthDate
+            );
+
+
+        numerology.birthday =
+            calculateBirthday(
+                birthDate
+            );
+
+
+        numerology.expression =
+            calculateExpression(
+                name
+            );
+
+
+        numerology.soulUrge =
+            calculateSoulUrge(
+                name
+            );
+
+
+        renderNumerology();
+
+
+        goToStep(2);
+
+    }
+
+
+    /* =========================================================
+       RENDER NUMEROLOGY
+    ========================================================= */
+
+    function renderNumerology() {
+
+        document
+            .getElementById(
+                'profile-name'
+            )
+            .textContent =
+                numerology.fullName;
+
+
+        document
+            .getElementById(
+                'life-path'
+            )
+            .textContent =
+                numerology.lifePath;
+
+
+        document
+            .getElementById(
+                'birthday-number'
+            )
+            .textContent =
+                numerology.birthday;
+
+
+        document
+            .getElementById(
+                'expression-number'
+            )
+            .textContent =
+                numerology.expression;
+
+
+        document
+            .getElementById(
+                'soul-urge-number'
+            )
+            .textContent =
+                numerology.soulUrge;
+
+
+        document
+            .getElementById(
+                'life-path-description'
+            )
+            .textContent =
+                lifePathDescriptions[
+                    numerology.lifePath
+                ];
+
+    }
+
+
+    /* =========================================================
+       NAVIGATION
+    ========================================================= */
+
+    function goToStep(step) {
+
+        if (
+            step === currentStep
+        ) {
+
+            return;
+
+        }
+
+
+        const current =
+            document.getElementById(
+                `step-${currentStep}`
+            );
+
+
+        const next =
+            document.getElementById(
+                `step-${step}`
+            );
+
+
+        const progress =
+            document.getElementById(
+                'progress'
+            );
+
+
+        current.classList.remove(
+            'active'
+        );
+
+
+        next.classList.add(
+            'active'
+        );
+
+
+        currentStep =
+            step;
+
+
+        let percentage;
+
+
+        if (
+            step === 1
+        ) {
+
+            percentage = 0;
+
+        } else if (
+            step === 2
+        ) {
+
+            percentage = 14;
+
+        } else if (
+            step === 8
+        ) {
+
+            percentage = 100;
+
+        } else {
+
+            percentage =
+                ((step - 2) /
+                (reflectionSteps - 1))
+                * 100;
+
+        }
+
+
+        progress.style.width =
+            `${percentage}%`;
+
+
+        if (
+            step >= 3 &&
+            step <= 7
+        ) {
+
+            saveDraft();
+
+        }
+
+
+        const textarea =
+            next.querySelector(
+                'textarea'
+            );
+
+
+        if (textarea) {
+
+            setTimeout(() => {
+
+                textarea.focus();
+
+            }, 350);
+
+        }
+
+
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+
+    }
+
+
+    /* =========================================================
+       VALIDATION
+    ========================================================= */
+
+    function attemptNext(
+        fromStep,
+        toStep
+    ) {
+
+        const questionMap = {
+
+            3: 'q1',
+            4: 'q2',
+            5: 'q3',
+            6: 'q4',
+            7: 'q5'
+
+        };
+
+
+        const textarea =
+            document.getElementById(
+                questionMap[fromStep]
+            );
+
+
+        const nudge =
+            document.getElementById(
+                `nudge-${fromStep}`
+            );
+
+
+        if (
+            !textarea ||
+            textarea.value.trim().length === 0
+        ) {
+
+            nudge.classList.add(
+                'show'
+            );
+
+            textarea.focus();
+
+            return;
+
+        }
+
+
+        nudge.classList.remove(
+            'show'
+        );
+
+
+        saveDraft();
+
+
+        goToStep(toStep);
+
+    }
+
+
+    /* =========================================================
+       SUBMIT TO SERVER
+    ========================================================= */
+
+    async function submitReflection(
+        direction,
+        nextStep
+    ) {
+
+        const data = {
+
+            name:
+                numerology.fullName,
+
+            birthDate:
+                numerology.birthDate,
+
+            numerology: {
+
+                lifePath:
+                    numerology.lifePath,
+
+                birthday:
+                    numerology.birthday,
+
+                expression:
+                    numerology.expression,
+
+                soulUrge:
+                    numerology.soulUrge
+
+            },
+
+            q1:
+                document
+                    .getElementById('q1')
+                    .value
+                    .trim(),
+
+            q2:
+                document
+                    .getElementById('q2')
+                    .value
+                    .trim(),
+
+            q3:
+                document
+                    .getElementById('q3')
+                    .value
+                    .trim(),
+
+            q4:
+                document
+                    .getElementById('q4')
+                    .value
+                    .trim(),
+
+            q5:
+                document
+                    .getElementById('q5')
+                    .value
+                    .trim(),
+
+            direction:
+                direction,
+
+            nextStep:
+                nextStep,
+
+            submittedAt:
+                new Date().toISOString()
+
+        };
+
+
+        try {
+
+            await fetch(
+                '/api/submit',
+                {
+                    method: 'POST',
+
+                    headers: {
+                        'Content-Type':
+                            'application/json'
+                    },
+
+                    body:
+                        JSON.stringify(data)
+
+                }
+            );
+
+        } catch (err) {
+
+            console.error(
+                'Gagal mengirim refleksi:',
+                err
+            );
+
+        }
+
+    }
+
+
+    /* =========================================================
+       RESULT
+    ========================================================= */
+
+    async function generateResult() {
+
+        const step5Textarea =
+            document.getElementById(
+                'q5'
+            );
+
+
+        if (
+            step5Textarea.value.trim().length === 0
+        ) {
+
+            document
+                .getElementById(
+                    'nudge-7'
+                )
+                .classList.add(
+                    'show'
+                );
+
+            step5Textarea.focus();
+
+            return;
+
+        }
+
+
+        let direction =
+            document
+                .getElementById('q4')
+                .value
+                .trim();
+
+
+        let nextStep =
+            document
+                .getElementById('q5')
+                .value
+                .trim();
+
+
+        if (!direction) {
+
+            direction =
+                "kehidupan yang terasa lebih selaras dengan diriku";
+
+        }
+
+
+        if (!nextStep) {
+
+            nextStep =
+                "satu langkah kecil yang realistis";
+
+        }
+
+
+        direction =
+            limitText(
+                direction,
+                280
+            );
+
+
+        nextStep =
+            limitText(
+                nextStep,
+                280
+            );
+
+
+        document
+            .getElementById(
+                'result-life-path'
+            )
+            .textContent =
+                numerology.lifePath;
+
+
+        document
+            .getElementById(
+                'result-birthday'
+            )
+            .textContent =
+                numerology.birthday;
+
+
+        document
+            .getElementById(
+                'result-expression'
+            )
+            .textContent =
+                numerology.expression;
+
+
+        document
+            .getElementById(
+                'result-soul'
+            )
+            .textContent =
+                numerology.soulUrge;
+
+
+        document
+            .getElementById(
+                'result-direction'
+            )
+            .textContent =
+                direction;
+
+
+        document
+            .getElementById(
+                'result-step'
+            )
+            .textContent =
+                nextStep;
+
+
+        document
+            .getElementById(
+                'personal-reading'
+            )
+            .textContent =
+                lifePathDescriptions[
+                    numerology.lifePath
+                ];
+
+
+        saveDraft();
+
+
+        await submitReflection(
+            direction,
+            nextStep
+        );
+
+
+        goToStep(8);
+
+
+        const savedNote =
+            document.getElementById(
+                'saved-note'
+            );
+
+
         setTimeout(() => {
-            savedNote.classList.add('show');
+
+            savedNote.classList.add(
+                'show'
+            );
+
         }, 500);
+
     }
 
 
-    /* =========================
+    /* =========================================================
        LIMIT TEXT
-    ========================== */
+    ========================================================= */
 
-    function limitText(text, max) {
-        if (text.length <= max) return text;
-        return text.slice(0, max).trim() + "…";
+    function limitText(
+        text,
+        max
+    ) {
+
+        if (
+            text.length <= max
+        ) {
+
+            return text;
+
+        }
+
+
+        return (
+            text
+                .slice(0, max)
+                .trim() +
+            "…"
+        );
+
     }
 
 
-    /* =========================
+    /* =========================================================
        RESET
-    ========================== */
+    ========================================================= */
 
-    async function newJournal() {
-        document.querySelectorAll('textarea').forEach(input => {
-            input.value = '';
-        });
+    function newJournal() {
 
-        document.querySelectorAll('.nudge').forEach(nudge => {
-            nudge.classList.remove('show');
-        });
+        document
+            .querySelectorAll(
+                'textarea'
+            )
+            .forEach(input => {
 
-        document.getElementById('saved-note').classList.remove('show');
+                input.value = '';
 
-        document.querySelectorAll('.step').forEach(step => {
-            step.classList.remove('active');
-            step.style.display = 'none';
-        });
+            });
 
-        const first = document.getElementById('step-1');
-        first.style.display = 'block';
-        first.classList.add('active');
 
-        document.getElementById('progress').style.width = '16.66%';
+        document
+            .querySelectorAll(
+                '.nudge'
+            )
+            .forEach(nudge => {
+
+                nudge.classList.remove(
+                    'show'
+                );
+
+            });
+
+
+        document
+            .getElementById(
+                'saved-note'
+            )
+            .classList.remove(
+                'show'
+            );
+
+
+        document
+            .querySelectorAll(
+                '.step'
+            )
+            .forEach(step => {
+
+                step.classList.remove(
+                    'active'
+                );
+
+            });
+
+
+        document
+            .getElementById(
+                'step-1'
+            )
+            .classList.add(
+                'active'
+            );
+
+
+        document
+            .getElementById(
+                'progress'
+            )
+            .style.width =
+                '0%';
+
+
+        document
+            .getElementById(
+                'fullName'
+            )
+            .value = '';
+
+
+        document
+            .getElementById(
+                'birthDate'
+            )
+            .value = '';
+
+
+        numerology = {
+
+            fullName: "",
+            birthDate: "",
+            lifePath: null,
+            birthday: null,
+            expression: null,
+            soulUrge: null
+
+        };
+
+
         currentStep = 1;
 
-        await clearDraft();
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+
+        clearDraft();
+
+
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+
     }
+
+
+    /* =========================================================
+       INIT
+    ========================================================= */
 
     loadDraft();
 
