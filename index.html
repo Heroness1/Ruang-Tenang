@@ -1,1073 +1,275 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <title>Ruang Tenang | Numerology Reflection</title>
-
-  <meta
-    name="description"
-    content="Ruang tenang untuk mengenal diri, memahami apa yang kamu rasakan, dan merefleksikan arah hidup serta hubungan yang kamu inginkan."
-  />
-
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&display=swap"
-    rel="stylesheet"
-  />
-
-  <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: "DM Sans", sans-serif;
-      background: #f5f3eb;
-      color: #26352d;
-    }
-
-    .serif {
-      font-family: "Libre Baskerville", serif;
-    }
-
-    .step {
-      display: none;
-      animation: fadeIn 0.45s ease;
-    }
-
-    .step.active {
-      display: block;
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(12px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    textarea,
-    input {
-      transition: all 0.2s ease;
-    }
-
-    textarea:focus,
-    input:focus {
-      outline: none;
-      border-color: #78927e;
-      box-shadow: 0 0 0 3px rgba(120, 146, 126, 0.12);
-    }
-
-    .number-card {
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .number-card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 30px rgba(38, 53, 45, 0.07);
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Quiet Space | Numerology Reflection</title>
+<meta name="description" content="A quiet space to get to know yourself, understand what you feel, and reflect on the direction and relationships you want.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f5f3eb;--card:#fbfaf5;--ink:#26352d;--mute:#66736b;--faint:#7f8a83;--line:#e2e3da;--accent:#536e5c;--accent-h:#465e4e;--soft:#eef1e9;--field:#fff;--sage:#5f7c66;--err:#a4443a;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#151a17;--card:#1d241f;--ink:#e8ece6;--mute:#a3afa7;--faint:#8a958d;--line:#2d3730;--accent:#5b7d66;--accent-h:#6a8f76;--soft:#243029;--field:#151a17;--sage:#8fb09a;--err:#e08a7f}}
+:root[data-theme="dark"]{--bg:#151a17;--card:#1d241f;--ink:#e8ece6;--mute:#a3afa7;--faint:#8a958d;--line:#2d3730;--accent:#5b7d66;--accent-h:#6a8f76;--soft:#243029;--field:#151a17;--sage:#8fb09a;--err:#e08a7f}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.6;min-height:100vh}
+main{max-width:42rem;margin:0 auto;padding:2rem 1.25rem 3rem}
+.serif{font-family:"Libre Baskerville",Georgia,"Times New Roman",serif}
+header{text-align:center;margin-bottom:2rem}
+.eyebrow{font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;color:var(--sage);margin:0 0 1rem}
+h1{font-size:2rem;line-height:1.25;margin:0 0 1rem;font-weight:400}
+h2{font-size:1.45rem;line-height:1.5;margin:0 0 1rem;font-weight:400;outline:none}
+h3{font-size:1.2rem;margin:0 0 1rem;font-weight:400}
+.lead{color:var(--mute);max-width:32rem;margin:0 auto}
+.mute{color:var(--mute);margin:0 0 1.5rem}
+.kicker{font-size:.875rem;font-weight:500;color:var(--sage);margin:0 0 .75rem}
+.prog{margin-bottom:1.5rem}
+.prog-row{display:flex;justify-content:space-between;font-size:.75rem;color:var(--faint);margin-bottom:.5rem}
+.bar{height:6px;background:var(--line);border-radius:9px;overflow:hidden}
+.bar>div{height:100%;background:var(--sage);border-radius:9px;transition:width .5s ease}
+.card{background:var(--card);border:1px solid var(--line);border-radius:1.5rem;padding:1.5rem}
+.step{display:none}
+.step.active{display:block;animation:in .45s ease}
+@keyframes in{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){.step.active{animation:none}.bar>div{transition:none}}
+label{display:block;font-size:.875rem;font-weight:500;margin-bottom:.5rem}
+.hint{font-weight:400;color:var(--faint)}
+input,textarea{width:100%;padding:.9rem 1rem;border:1px solid var(--line);border-radius:1rem;background:var(--field);color:var(--ink);font:inherit;transition:border-color .2s,box-shadow .2s}
+textarea{resize:vertical;min-height:9rem}
+input:focus,textarea:focus{outline:none;border-color:var(--sage);box-shadow:0 0 0 3px color-mix(in srgb,var(--sage) 25%,transparent)}
+.field{margin-bottom:1.25rem}
+.btn{display:block;width:100%;margin-top:1.5rem;padding:1rem;border:0;border-radius:1rem;background:var(--accent);color:#fff;font:inherit;font-weight:500;cursor:pointer;transition:background .2s}
+.btn:hover{background:var(--accent-h)}
+.btn:focus-visible,.link:focus-visible{outline:2px solid var(--sage);outline-offset:2px}
+.btn.ghost{background:transparent;color:var(--mute);border:1px solid var(--line);margin-top:.6rem}
+.btn.ghost:hover{background:var(--soft)}
+.err{color:var(--err);font-size:.85rem;margin:.75rem 0 0;min-height:1.2em}
+.small{font-size:.75rem;color:var(--faint);text-align:center;margin:1rem 0 0}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-bottom:1.5rem}
+.grid>:last-child:nth-child(odd){grid-column:span 2}
+.num{background:var(--field);border:1px solid var(--line);border-radius:1rem;padding:1rem;transition:transform .2s,box-shadow .2s}
+.num:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(0,0,0,.07)}
+.num b{display:block;font-size:.75rem;font-weight:500;color:var(--faint)}
+.num .n{font-family:"Libre Baskerville",Georgia,serif;font-size:2.2rem;line-height:1.3}
+.num small{display:block;font-size:.75rem;color:var(--mute)}
+.panel{background:var(--soft);border-radius:1rem;padding:1.25rem;margin-bottom:1.25rem}
+.panel p{margin:0;font-size:.9rem;color:var(--mute)}
+.panel .t{font-size:.875rem;font-weight:500;color:var(--ink);margin-bottom:.5rem}
+.box{border:1px solid var(--line);border-radius:1rem;padding:1.25rem;margin-bottom:1.25rem}
+.box p{margin:0}
+.quote{text-align:center;color:var(--mute);margin-top:2rem}
+details{font-size:.8rem;color:var(--mute);margin-top:1.25rem}
+summary{cursor:pointer;color:var(--sage)}
+details p{margin:.5rem 0 0}
+.link{background:none;border:0;color:var(--sage);font:inherit;font-size:.85rem;text-decoration:underline;cursor:pointer;display:block;margin:1.25rem auto 0}
+footer{text-align:center;margin-top:1.5rem;font-size:.75rem;color:var(--faint)}
+@media(min-width:640px){main{padding-top:3.5rem}h1{font-size:2.4rem}.card{padding:2.25rem}h2{font-size:1.7rem}}
+</style>
 </head>
+<body>
+<main>
+<header>
+  <p class="eyebrow">Quiet Space</p>
+  <h1 class="serif">Get to know yourself,<br>slowly.</h1>
+  <p class="lead">Sometimes we just need a moment to stop, look inward, and be honest about what we actually want.</p>
+</header>
 
-<body class="min-h-screen">
+<div class="prog" aria-live="polite">
+  <div class="prog-row"><span id="stepLabel">Step 1 of 8</span><span id="pct">13%</span></div>
+  <div class="bar"><div id="bar" style="width:13%"></div></div>
+</div>
 
-  <main class="max-w-2xl mx-auto px-5 py-8 md:py-14">
+<section class="card" id="steps">
 
-    <!-- HEADER -->
-    <header class="text-center mb-10">
-      <p class="text-sm tracking-[0.2em] uppercase text-[#78927e] mb-4">
-        Ruang Tenang
-      </p>
-
-      <h1 class="serif text-3xl md:text-4xl leading-tight mb-4">
-        Kenali dirimu,<br />
-        pelan-pelan.
-      </h1>
-
-      <p class="text-[#66736b] leading-relaxed max-w-lg mx-auto">
-        Kadang kita cuma butuh sedikit waktu untuk berhenti,
-        melihat ke dalam diri sendiri, lalu jujur tentang apa
-        yang sebenarnya kita inginkan.
-      </p>
-    </header>
-
-
-    <!-- PROGRESS -->
-    <div class="mb-8">
-      <div class="flex justify-between text-xs text-[#879189] mb-2">
-        <span id="stepLabel">Langkah 1 dari 8</span>
-        <span id="progressPercent">13%</span>
-      </div>
-
-      <div class="w-full h-1.5 bg-[#e1e2d9] rounded-full overflow-hidden">
-        <div
-          id="progressBar"
-          class="h-full bg-[#78927e] rounded-full transition-all duration-500"
-          style="width: 13%"
-        ></div>
-      </div>
+  <div class="step active" id="step1">
+    <p class="kicker">Before we begin</p>
+    <h2 class="serif" tabindex="-1">Tell me a little about yourself.</h2>
+    <p class="mute">Your name and birth date are used to work out your numerology numbers. After that, we'll talk a bit about life, relationships, and whatever may be on your mind.</p>
+    <div class="field">
+      <label for="fullName">Full name <span class="hint">(as written at birth, if you can)</span></label>
+      <input id="fullName" type="text" autocomplete="name" placeholder="Your full name">
     </div>
-
-
-    <!-- CARD -->
-    <section class="bg-[#fbfaf5] rounded-3xl shadow-sm border border-[#e7e6dc] p-6 md:p-9">
-
-
-      <!-- STEP 1 -->
-      <div class="step active" id="step1">
-
-        <p class="text-sm text-[#78927e] font-medium mb-3">
-          Sebelum mulai
-        </p>
-
-        <h2 class="serif text-2xl md:text-3xl leading-relaxed mb-4">
-          Ceritain sedikit tentang dirimu.
-        </h2>
-
-        <p class="text-[#68746c] leading-relaxed mb-7">
-          Nama dan tanggal lahir ini nantinya dipakai untuk menghitung
-          angka numerology kamu. Setelah itu kita akan ngobrol sedikit
-          tentang hidup, hubungan, dan hal-hal yang mungkin sedang kamu pikirkan.
-        </p>
-
-        <div class="space-y-5">
-
-          <div>
-            <label class="block text-sm font-medium mb-2">
-              Nama lengkap
-            </label>
-
-            <input
-              id="fullName"
-              type="text"
-              placeholder="Tulis nama lengkapmu"
-              class="w-full px-4 py-3.5 rounded-2xl border border-[#dfe1d7] bg-white text-[#26352d]"
-            />
-          </div>
-
-          <div>
-            <label class="block text-sm font-medium mb-2">
-              Tanggal lahir
-            </label>
-
-            <input
-              id="birthDate"
-              type="date"
-              class="w-full px-4 py-3.5 rounded-2xl border border-[#dfe1d7] bg-white text-[#26352d]"
-            />
-          </div>
-
-        </div>
-
-        <button
-          onclick="nextStep()"
-          class="w-full mt-7 py-4 rounded-2xl bg-[#536e5c] text-white font-medium hover:bg-[#465e4e] transition"
-        >
-          Mulai pelan-pelan
-        </button>
-
-        <p class="text-xs text-[#929a94] text-center mt-4 leading-relaxed">
-          Numerology di sini digunakan sebagai alat refleksi pribadi,
-          bukan diagnosis atau kepastian tentang masa depan.
-        </p>
-
-      </div>
-
-
-      <!-- STEP 2 -->
-      <div class="step" id="step2">
-
-        <p class="text-sm text-[#78927e] font-medium mb-3">
-          Tentang kamu
-        </p>
-
-        <h2 class="serif text-2xl md:text-3xl leading-relaxed mb-4">
-          Ini beberapa angka yang muncul dari namamu dan tanggal lahirmu.
-        </h2>
-
-        <p class="text-[#68746c] leading-relaxed mb-7">
-          Dalam tradisi numerology, angka-angka ini sering digunakan
-          untuk melihat tema tertentu dalam diri seseorang.
-          Anggap saja sebagai cermin untuk berpikir, bukan sebagai
-          sesuatu yang menentukan siapa dirimu.
-        </p>
-
-        <div class="grid grid-cols-2 gap-4 mb-7">
-
-          <div class="number-card bg-white border border-[#e2e3da] rounded-2xl p-5">
-            <p class="text-xs text-[#89928b] mb-2">Life Path</p>
-            <p id="lifePathNumber" class="serif text-4xl"></p>
-            <p class="text-xs text-[#89928b] mt-2">
-              arah hidup
-            </p>
-          </div>
-
-          <div class="number-card bg-white border border-[#e2e3da] rounded-2xl p-5">
-            <p class="text-xs text-[#89928b] mb-2">Birthday</p>
-            <p id="birthdayNumber" class="serif text-4xl"></p>
-            <p class="text-xs text-[#89928b] mt-2">
-              karakter pribadi
-            </p>
-          </div>
-
-          <div class="number-card bg-white border border-[#e2e3da] rounded-2xl p-5">
-            <p class="text-xs text-[#89928b] mb-2">Expression</p>
-            <p id="expressionNumber" class="serif text-4xl"></p>
-            <p class="text-xs text-[#89928b] mt-2">
-              cara mengekspresikan diri
-            </p>
-          </div>
-
-          <div class="number-card bg-white border border-[#e2e3da] rounded-2xl p-5">
-            <p class="text-xs text-[#89928b] mb-2">Soul Urge</p>
-            <p id="soulUrgeNumber" class="serif text-4xl"></p>
-            <p class="text-xs text-[#89928b] mt-2">
-              kebutuhan batin
-            </p>
-          </div>
-
-        </div>
-
-        <div class="bg-[#eef1e9] rounded-2xl p-5">
-          <p class="text-sm font-medium mb-2">
-            Sedikit tentang Life Path kamu
-          </p>
-
-          <p
-            id="lifePathDescription"
-            class="text-sm text-[#637068] leading-relaxed"
-          ></p>
-        </div>
-
-        <button
-          onclick="nextStep()"
-          class="w-full mt-7 py-4 rounded-2xl bg-[#536e5c] text-white font-medium hover:bg-[#465e4e] transition"
-        >
-          Lanjut
-        </button>
-
-      </div>
-
-
-      <!-- STEP 3 -->
-      <div class="step" id="step3">
-
-        <p class="text-sm text-[#78927e] font-medium mb-3">
-          Kita mulai dari sini
-        </p>
-
-        <h2 class="serif text-2xl md:text-3xl leading-relaxed mb-4">
-          Akhir-akhir ini, apa yang paling sering memenuhi pikiranmu?
-        </h2>
-
-        <p class="text-[#68746c] leading-relaxed mb-6">
-          Nggak harus sesuatu yang besar. Bisa tentang kerjaan,
-          keluarga, masa depan, hubungan, uang, atau bahkan sesuatu
-          yang kamu sendiri masih susah jelasin.
-        </p>
-
-        <textarea
-          id="q1"
-          rows="6"
-          placeholder="Tulis apa adanya. Nggak perlu dibuat bagus."
-          class="w-full px-4 py-4 rounded-2xl border border-[#dfe1d7] bg-white resize-none"
-        ></textarea>
-
-        <button
-          onclick="nextStep()"
-          class="w-full mt-6 py-4 rounded-2xl bg-[#536e5c] text-white font-medium hover:bg-[#465e4e] transition"
-        >
-          Lanjut
-        </button>
-
-      </div>
-
-
-      <!-- STEP 4 -->
-      <div class="step" id="step4">
-
-        <p class="text-sm text-[#78927e] font-medium mb-3">
-          Tentang cinta
-        </p>
-
-        <h2 class="serif text-2xl md:text-3xl leading-relaxed mb-4">
-          Kalau suatu hari kamu punya pasangan yang benar-benar bikin kamu nyaman, kamu pengin hubungan itu terasa seperti apa?
-        </h2>
-
-        <p class="text-[#68746c] leading-relaxed mb-6">
-          Coba bayangin bukan cuma orangnya seperti apa,
-          tapi juga bagaimana rasanya ketika kamu menjalani hubungan itu.
-          Apa yang ingin kamu rasakan? Apa yang ingin kamu dapatkan?
-        </p>
-
-        <textarea
-          id="q2"
-          rows="7"
-          placeholder="Misalnya: merasa aman, bisa ngobrol apa aja, saling support, punya kehidupan bersama..."
-          class="w-full px-4 py-4 rounded-2xl border border-[#dfe1d7] bg-white resize-none"
-        ></textarea>
-
-        <button
-          onclick="nextStep()"
-          class="w-full mt-6 py-4 rounded-2xl bg-[#536e5c] text-white font-medium hover:bg-[#465e4e] transition"
-        >
-          Lanjut
-        </button>
-
-      </div>
-
-
-      <!-- STEP 5 -->
-      <div class="step" id="step5">
-
-        <p class="text-sm text-[#78927e] font-medium mb-3">
-          Tentang pengalamanmu
-        </p>
-
-        <h2 class="serif text-2xl md:text-3xl leading-relaxed mb-4">
-          Dalam hubungan, hal apa yang paling kamu takut terulang lagi?
-        </h2>
-
-        <p class="text-[#68746c] leading-relaxed mb-6">
-          Mungkin pernah merasa nggak dihargai, ditinggalkan,
-          disalahpahami, terlalu banyak memberi, atau justru
-          kehilangan diri sendiri. Ceritain kalau kamu nyaman.
-        </p>
-
-        <textarea
-          id="q3"
-          rows="7"
-          placeholder="Nggak perlu menyebut nama siapa pun. Fokus aja ke apa yang kamu rasakan."
-          class="w-full px-4 py-4 rounded-2xl border border-[#dfe1d7] bg-white resize-none"
-        ></textarea>
-
-        <button
-          onclick="nextStep()"
-          class="w-full mt-6 py-4 rounded-2xl bg-[#536e5c] text-white font-medium hover:bg-[#465e4e] transition"
-        >
-          Lanjut
-        </button>
-
-      </div>
-
-
-      <!-- STEP 6 -->
-      <div class="step" id="step6">
-
-        <p class="text-sm text-[#78927e] font-medium mb-3">
-          Tentang dirimu
-        </p>
-
-        <h2 class="serif text-2xl md:text-3xl leading-relaxed mb-4">
-          Kamu ingin menjadi pasangan yang seperti apa?
-        </h2>
-
-        <p class="text-[#68746c] leading-relaxed mb-6">
-          Bukan pasangan yang sempurna. Cukup bayangin versi dirimu
-          yang ingin kamu bawa ke dalam sebuah hubungan.
-        </p>
-
-        <textarea
-          id="q4"
-          rows="7"
-          placeholder="Misalnya: lebih sabar, bisa mendengarkan, setia, terbuka, bisa jadi tempat pulang..."
-          class="w-full px-4 py-4 rounded-2xl border border-[#dfe1d7] bg-white resize-none"
-        ></textarea>
-
-        <button
-          onclick="nextStep()"
-          class="w-full mt-6 py-4 rounded-2xl bg-[#536e5c] text-white font-medium hover:bg-[#465e4e] transition"
-        >
-          Lanjut
-        </button>
-
-      </div>
-
-
-      <!-- STEP 7 -->
-      <div class="step" id="step7">
-
-        <p class="text-sm text-[#78927e] font-medium mb-3">
-          Harapanmu
-        </p>
-
-        <h2 class="serif text-2xl md:text-3xl leading-relaxed mb-4">
-          Kalau kamu membayangkan kehidupan cintamu beberapa tahun ke depan, kamu berharap seperti apa?
-        </h2>
-
-        <p class="text-[#68746c] leading-relaxed mb-6">
-          Nggak cuma tentang punya pasangan atau nggak.
-          Coba bayangin hubungan yang ingin kamu bangun,
-          kehidupan yang ingin kamu jalani, dan orang seperti apa
-          yang ingin ada di sampingmu.
-        </p>
-
-        <textarea
-          id="q5"
-          rows="7"
-          placeholder="Tulis gambaran yang muncul di kepala kamu..."
-          class="w-full px-4 py-4 rounded-2xl border border-[#dfe1d7] bg-white resize-none"
-        ></textarea>
-
-        <div class="mt-5">
-          <label class="block text-sm font-medium mb-2">
-            Setelah semua yang kamu tulis, satu langkah kecil apa yang mau kamu lakukan?
-          </label>
-
-          <textarea
-            id="nextStep"
-            rows="4"
-            placeholder="Sesuatu yang realistis dan bisa kamu mulai dalam beberapa hari ke depan."
-            class="w-full px-4 py-4 rounded-2xl border border-[#dfe1d7] bg-white resize-none"
-          ></textarea>
-        </div>
-
-        <button
-          onclick="submitReflection()"
-          id="submitButton"
-          class="w-full mt-6 py-4 rounded-2xl bg-[#536e5c] text-white font-medium hover:bg-[#465e4e] transition"
-        >
-          Lihat refleksiku
-        </button>
-
-      </div>
-
-
-      <!-- STEP 8 -->
-      <div class="step" id="step8">
-
-        <div class="text-center mb-8">
-
-          <p class="text-sm text-[#78927e] font-medium mb-3">
-            Ruangmu hari ini
-          </p>
-
-          <h2 class="serif text-3xl md:text-4xl leading-tight mb-4">
-            Terima kasih sudah jujur.
-          </h2>
-
-          <p class="text-[#68746c] leading-relaxed">
-            Nggak semua hal harus langsung punya jawaban.
-            Kadang mengetahui apa yang sebenarnya kita rasakan
-            sudah menjadi langkah pertama.
-          </p>
-
-        </div>
-
-
-        <!-- NUMEROLOGY -->
-        <div class="mb-8">
-
-          <h3 class="serif text-xl mb-4">
-            Angka yang menemani refleksimu
-          </h3>
-
-          <div class="grid grid-cols-2 gap-3">
-
-            <div class="bg-white border border-[#e2e3da] rounded-2xl p-4">
-              <p class="text-xs text-[#89928b]">Life Path</p>
-              <p id="resultLifePath" class="serif text-3xl mt-1"></p>
-            </div>
-
-            <div class="bg-white border border-[#e2e3da] rounded-2xl p-4">
-              <p class="text-xs text-[#89928b]">Birthday</p>
-              <p id="resultBirthday" class="serif text-3xl mt-1"></p>
-            </div>
-
-            <div class="bg-white border border-[#e2e3da] rounded-2xl p-4">
-              <p class="text-xs text-[#89928b]">Expression</p>
-              <p id="resultExpression" class="serif text-3xl mt-1"></p>
-            </div>
-
-            <div class="bg-white border border-[#e2e3da] rounded-2xl p-4">
-              <p class="text-xs text-[#89928b]">Soul Urge</p>
-              <p id="resultSoulUrge" class="serif text-3xl mt-1"></p>
-            </div>
-
-          </div>
-
-        </div>
-
-
-        <!-- PERSONAL READING -->
-        <div class="bg-[#eef1e9] rounded-2xl p-6 mb-6">
-
-          <p class="text-sm font-medium mb-3">
-            Dari sudut pandang numerology
-          </p>
-
-          <p
-            id="resultReading"
-            class="text-sm text-[#637068] leading-relaxed"
-          ></p>
-
-        </div>
-
-
-        <!-- LOVE REFLECTION -->
-        <div class="border border-[#e2e3da] rounded-2xl p-6 mb-6">
-
-          <p class="text-sm text-[#78927e] font-medium mb-3">
-            Tentang cara kamu melihat cinta
-          </p>
-
-          <p class="serif text-xl leading-relaxed mb-4">
-            Hubungan yang kamu inginkan juga bercerita tentang kebutuhanmu sendiri.
-          </p>
-
-          <p class="text-sm text-[#68746c] leading-relaxed">
-            Dari jawabanmu, coba perhatikan satu hal:
-            apakah hubungan yang kamu harapkan memberi ruang untuk
-            menjadi dirimu sendiri, sekaligus membuatmu merasa
-            diterima dan dihargai?
-          </p>
-
-        </div>
-
-
-        <!-- HOPE -->
-        <div class="border border-[#e2e3da] rounded-2xl p-6 mb-6">
-
-          <p class="text-sm text-[#78927e] font-medium mb-3">
-            Harapanmu untuk cinta
-          </p>
-
-          <p
-            id="resultLoveHope"
-            class="text-[#536158] leading-relaxed"
-          ></p>
-
-        </div>
-
-
-        <!-- NEXT STEP -->
-        <div class="border border-[#e2e3da] rounded-2xl p-6 mb-8">
-
-          <p class="text-sm text-[#78927e] font-medium mb-3">
-            Langkah kecilmu
-          </p>
-
-          <p
-            id="resultNextStep"
-            class="serif text-xl leading-relaxed"
-          ></p>
-
-        </div>
-
-
-        <div class="text-center">
-
-          <p class="serif text-lg leading-relaxed text-[#536158]">
-            “The curious paradox is that when I accept myself just as I am,
-            then I can change.”
-          </p>
-
-          <p class="text-xs text-[#929a94] mt-3">
-            Carl Rogers
-          </p>
-
-        </div>
-
-
-        <div class="mt-8 pt-6 border-t border-[#e3e3da]">
-
-          <p class="text-xs text-[#929a94] leading-relaxed text-center">
-            Numerology merupakan tradisi interpretatif dan tidak memiliki
-            dasar ilmiah untuk memprediksi masa depan atau menentukan
-            kepribadian seseorang secara pasti. Gunakan hasil ini sebagai
-            bahan refleksi, lalu tetap percayakan keputusan hidupmu pada
-            pengalaman, nilai, dan pilihanmu sendiri.
-          </p>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- FOOTER -->
-    <footer class="text-center mt-7">
-      <p class="text-xs text-[#929a94]">
-        Ruang Tenang · Untuk berhenti sebentar dan mendengarkan diri sendiri
-      </p>
-    </footer>
-
-  </main>
-
-
-  <script>
-
-    let currentStep = 1;
-
-    let numerology = {
-      lifePath: null,
-      birthday: null,
-      expression: null,
-      soulUrge: null
-    };
-
-
-    const lifePathDescriptions = {
-
-      1: "Dalam numerology, angka 1 sering dikaitkan dengan kemandirian, dorongan untuk memulai sesuatu, dan keinginan untuk menentukan jalan sendiri. Kamu bisa memakai tema ini untuk bertanya: bagian hidup mana yang sebenarnya ingin kamu pilih sendiri?",
-
-      2: "Dalam numerology, angka 2 sering dikaitkan dengan hubungan, kerja sama, kepekaan, dan kebutuhan akan koneksi emosional. Kamu bisa memakai tema ini untuk melihat bagaimana kamu ingin merasa dekat dengan seseorang tanpa kehilangan dirimu sendiri.",
-
-      3: "Dalam numerology, angka 3 sering dikaitkan dengan ekspresi diri, kreativitas, komunikasi, dan spontanitas. Kamu bisa bertanya pada dirimu: apakah selama ini kamu cukup bebas menunjukkan apa yang sebenarnya kamu rasakan?",
-
-      4: "Dalam numerology, angka 4 sering dikaitkan dengan kestabilan, struktur, tanggung jawab, dan membangun sesuatu secara perlahan. Dalam hubungan, tema ini bisa menjadi ruang untuk merefleksikan rasa aman dan konsistensi.",
-
-      5: "Dalam numerology, angka 5 sering dikaitkan dengan kebebasan, pengalaman, perubahan, dan rasa ingin tahu. Kamu bisa merefleksikan bagaimana menemukan keseimbangan antara kebebasan pribadi dan kedekatan dengan orang lain.",
-
-      6: "Dalam numerology, angka 6 sering dikaitkan dengan kepedulian, keluarga, tanggung jawab, dan keinginan menciptakan hubungan yang harmonis. Kamu bisa bertanya apakah selama ini kamu memberi terlalu banyak atau sudah memberi dengan batas yang sehat.",
-
-      7: "Dalam numerology, angka 7 sering dikaitkan dengan introspeksi, pencarian makna, dan kebutuhan akan ruang pribadi. Dalam hubungan, kamu bisa merefleksikan bagaimana caramu membuka diri sambil tetap menjaga ruang untuk dirimu sendiri.",
-
-      8: "Dalam numerology, angka 8 sering dikaitkan dengan ambisi, keteguhan, pencapaian, dan kemampuan mengelola kehidupan secara praktis. Kamu bisa merefleksikan hubungan antara tujuan pribadi, keamanan hidup, dan hubungan yang ingin kamu bangun.",
-
-      9: "Dalam numerology, angka 9 sering dikaitkan dengan empati, kasih sayang, idealisme, dan proses melepaskan sesuatu yang sudah tidak lagi sesuai. Kamu bisa merefleksikan apa yang ingin kamu bawa ke hubungan berikutnya dan apa yang sudah waktunya kamu lepaskan.",
-
-      11: "Dalam numerology, angka 11 sering disebut sebagai angka master dan dikaitkan dengan intuisi, sensitivitas, inspirasi, dan kedalaman batin. Tema ini bisa kamu gunakan untuk melihat lebih dekat apa yang sebenarnya kamu rasakan, bukan hanya apa yang terlihat dari luar.",
-
-      22: "Dalam numerology, angka 22 sering disebut sebagai angka master yang dikaitkan dengan membangun sesuatu yang nyata dari sebuah visi. Kamu bisa merefleksikan bagaimana harapan dan impianmu bisa diterjemahkan menjadi kehidupan yang benar-benar ingin kamu jalani.",
-
-      33: "Dalam numerology, angka 33 sering disebut sebagai angka master dan dikaitkan dengan kepedulian, kasih sayang, serta keinginan memberi dampak positif bagi orang lain. Kamu bisa merefleksikan bagaimana mencintai orang lain tanpa melupakan kebutuhanmu sendiri."
-
-    };
-
-
-    function reduceNumber(number) {
-
-      while (number > 9 && number !== 11 && number !== 22 && number !== 33) {
-
-        number = String(number)
-          .split("")
-          .reduce((sum, digit) => sum + Number(digit), 0);
-
-      }
-
-      return number;
-    }
-
-
-    function calculateLifePath(date) {
-
-      const digits = date
-        .replace(/\D/g, "")
-        .split("")
-        .reduce((sum, digit) => sum + Number(digit), 0);
-
-      return reduceNumber(digits);
-    }
-
-
-    function calculateBirthday(date) {
-
-      const day = Number(date.split("-")[2]);
-
-      return reduceNumber(day);
-    }
-
-
-    const numerologyMap = {
-
-      A: 1, B: 2, C: 3, D: 4, E: 5, F: 6, G: 7, H: 8, I: 9,
-
-      J: 1, K: 2, L: 3, M: 4, N: 5, O: 6, P: 7, Q: 8, R: 9,
-
-      S: 1, T: 2, U: 3, V: 4, W: 5, X: 6, Y: 7, Z: 8
-
-    };
-
-
-    function calculateExpression(name) {
-
-      let total = 0;
-
-      name
-        .toUpperCase()
-        .split("")
-        .forEach(letter => {
-
-          if (numerologyMap[letter]) {
-            total += numerologyMap[letter];
-          }
-
-        });
-
-      return reduceNumber(total);
-    }
-
-
-    function calculateSoulUrge(name) {
-
-      let total = 0;
-
-      const vowels = ["A", "E", "I", "O", "U"];
-
-      name
-        .toUpperCase()
-        .split("")
-        .forEach(letter => {
-
-          if (vowels.includes(letter) && numerologyMap[letter]) {
-            total += numerologyMap[letter];
-          }
-
-        });
-
-      return reduceNumber(total);
-    }
-
-
-    function calculateNumerology() {
-
-      const name = document
-        .getElementById("fullName")
-        .value
-        .trim();
-
-      const birthDate = document
-        .getElementById("birthDate")
-        .value;
-
-
-      if (!name || !birthDate) {
-        return false;
-      }
-
-
-      numerology.lifePath = calculateLifePath(birthDate);
-      numerology.birthday = calculateBirthday(birthDate);
-      numerology.expression = calculateExpression(name);
-      numerology.soulUrge = calculateSoulUrge(name);
-
-
-      document.getElementById("lifePathNumber").textContent =
-        numerology.lifePath;
-
-      document.getElementById("birthdayNumber").textContent =
-        numerology.birthday;
-
-      document.getElementById("expressionNumber").textContent =
-        numerology.expression;
-
-      document.getElementById("soulUrgeNumber").textContent =
-        numerology.soulUrge;
-
-
-      document.getElementById("lifePathDescription").textContent =
-        lifePathDescriptions[numerology.lifePath] ||
-        "Angka ini bisa kamu gunakan sebagai titik awal untuk melihat pola, nilai, dan pertanyaan yang terasa relevan dalam hidupmu.";
-
-
-      return true;
-    }
-
-
-    function updateProgress() {
-
-      const totalSteps = 8;
-
-      const percentage = Math.round(
-        (currentStep / totalSteps) * 100
-      );
-
-      document.getElementById("stepLabel").textContent =
-        `Langkah ${currentStep} dari ${totalSteps}`;
-
-      document.getElementById("progressPercent").textContent =
-        `${percentage}%`;
-
-      document.getElementById("progressBar").style.width =
-        `${percentage}%`;
-
-    }
-
-
-    function showStep(step) {
-
-      document.querySelectorAll(".step").forEach(element => {
-        element.classList.remove("active");
-      });
-
-      const target = document.getElementById(`step${step}`);
-
-      if (target) {
-        target.classList.add("active");
-      }
-
-      currentStep = step;
-
-      updateProgress();
-
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-      });
-
-    }
-
-
-    function nextStep() {
-
-      if (currentStep === 1) {
-
-        const valid = calculateNumerology();
-
-        if (!valid) {
-
-          alert("Isi nama lengkap dan tanggal lahir dulu ya.");
-
-          return;
-        }
-
-      }
-
-
-      saveDraft();
-
-      if (currentStep < 8) {
-        showStep(currentStep + 1);
-      }
-
-    }
-
-
-    function saveDraft() {
-
-      const draft = {
-
-        q1: document.getElementById("q1")?.value || "",
-
-        q2: document.getElementById("q2")?.value || "",
-
-        q3: document.getElementById("q3")?.value || "",
-
-        q4: document.getElementById("q4")?.value || "",
-
-        q5: document.getElementById("q5")?.value || "",
-
-        nextStep:
-          document.getElementById("nextStep")?.value || ""
-
-      };
-
-
-      localStorage.setItem(
-        "ruangTenangDraft",
-        JSON.stringify(draft)
-      );
-
-    }
-
-
-    function loadDraft() {
-
-      const saved =
-        localStorage.getItem("ruangTenangDraft");
-
-      if (!saved) return;
-
-      try {
-
-        const draft = JSON.parse(saved);
-
-        if (document.getElementById("q1")) {
-          document.getElementById("q1").value = draft.q1 || "";
-        }
-
-        if (document.getElementById("q2")) {
-          document.getElementById("q2").value = draft.q2 || "";
-        }
-
-        if (document.getElementById("q3")) {
-          document.getElementById("q3").value = draft.q3 || "";
-        }
-
-        if (document.getElementById("q4")) {
-          document.getElementById("q4").value = draft.q4 || "";
-        }
-
-        if (document.getElementById("q5")) {
-          document.getElementById("q5").value = draft.q5 || "";
-        }
-
-        if (document.getElementById("nextStep")) {
-          document.getElementById("nextStep").value =
-            draft.nextStep || "";
-        }
-
-      } catch (error) {
-
-        console.error("Failed to load draft:", error);
-
-      }
-
-    }
-
-
-    async function submitReflection() {
-
-      const button =
-        document.getElementById("submitButton");
-
-      const name =
-        document.getElementById("fullName").value.trim();
-
-      const birthDate =
-        document.getElementById("birthDate").value;
-
-      const q1 =
-        document.getElementById("q1").value.trim();
-
-      const q2 =
-        document.getElementById("q2").value.trim();
-
-      const q3 =
-        document.getElementById("q3").value.trim();
-
-      const q4 =
-        document.getElementById("q4").value.trim();
-
-      const q5 =
-        document.getElementById("q5").value.trim();
-
-      const nextStep =
-        document.getElementById("nextStep").value.trim();
-
-
-      if (!q1 || !q2 || !q3 || !q4 || !q5 || !nextStep) {
-
-        alert(
-          "Isi refleksinya dulu ya. Nggak perlu panjang, yang penting jujur."
-        );
-
-        return;
-      }
-
-
-      button.disabled = true;
-
-      button.textContent = "Sebentar...";
-
-
-      const payload = {
-
-        name,
-
-        birthDate,
-
-        numerology,
-
-        q1,
-
-        q2,
-
-        q3,
-
-        q4,
-
-        q5,
-
-        direction: q5,
-
-        nextStep,
-
-        submittedAt: new Date().toISOString()
-
-      };
-
-
-      try {
-
-        const response = await fetch(
-          "/api/submit",
-          {
-            method: "POST",
-
-            headers: {
-              "Content-Type": "application/json"
-            },
-
-            body: JSON.stringify(payload)
-
-          }
-        );
-
-
-        if (!response.ok) {
-          throw new Error("Submission failed");
-        }
-
-
-        document.getElementById("resultLifePath").textContent =
-          numerology.lifePath;
-
-        document.getElementById("resultBirthday").textContent =
-          numerology.birthday;
-
-        document.getElementById("resultExpression").textContent =
-          numerology.expression;
-
-        document.getElementById("resultSoulUrge").textContent =
-          numerology.soulUrge;
-
-
-        document.getElementById("resultReading").textContent =
-          lifePathDescriptions[numerology.lifePath] ||
-          "Gunakan angka ini sebagai titik awal untuk melihat kembali apa yang sedang kamu cari dan butuhkan dalam hidup.";
-
-
-        document.getElementById("resultLoveHope").textContent =
-          q5;
-
-
-        document.getElementById("resultNextStep").textContent =
-          nextStep;
-
-
-        localStorage.removeItem("ruangTenangDraft");
-
-
-        showStep(8);
-
-
-      } catch (error) {
-
-        console.error(error);
-
-        alert(
-          "Kayaknya ada sedikit masalah saat mengirim refleksimu. Coba lagi ya."
-        );
-
-        button.disabled = false;
-
-        button.textContent = "Lihat refleksiku";
-
-      }
-
-    }
-
-
-    document.addEventListener(
-      "DOMContentLoaded",
-      loadDraft
-    );
-
-  </script>
-
+    <div class="field">
+      <label for="birthDate">Date of birth</label>
+      <input id="birthDate" type="date" min="1900-01-01" autocomplete="bday">
+    </div>
+    <p class="err" id="err1" role="alert"></p>
+    <button class="btn" data-next>Begin gently</button>
+    <p class="small">Numerology is used here as a tool for personal reflection, not a diagnosis or a prediction of your future.</p>
+  </div>
+
+  <div class="step" id="step2">
+    <p class="kicker">About you</p>
+    <h2 class="serif" tabindex="-1">These numbers come from your name and birth date.</h2>
+    <p class="mute">In numerology traditions, these numbers point to certain themes in a person. Treat them as a mirror to think with, not something that decides who you are.</p>
+    <div class="grid" id="cards2"></div>
+    <div class="panel"><p class="t">A little about your Life Path</p><p id="lpText"></p></div>
+    <details>
+      <summary>How these are calculated</summary>
+      <p>Pythagorean system (A=1 … I=9, J=1 … R=9, S=1 … Z=8). Life Path: month, day and year are each reduced separately, then added and reduced. Expression: all letters; Soul Urge: vowels; Personality: consonants. Each name word is reduced on its own, then the results are added and reduced. Y counts as a vowel only when no vowel sits next to it. Master numbers 11, 22 and 33 are kept and shown with their base digit (e.g. 11/2).</p>
+    </details>
+    <button class="btn" data-next>Continue</button>
+    <button class="btn ghost" data-back>Back</button>
+  </div>
+
+  <div id="qsteps"></div>
+
+  <div class="step" id="step8">
+    <div style="text-align:center;margin-bottom:2rem">
+      <p class="kicker">Your space today</p>
+      <h2 class="serif" tabindex="-1" style="font-size:1.9rem">Thank you for being honest.</h2>
+      <p class="mute" style="margin:0">Not everything needs an answer right away. Sometimes knowing what we actually feel is already the first step.</p>
+    </div>
+    <h3 class="serif">The numbers that sit with your reflection</h3>
+    <div class="grid" id="cards8"></div>
+    <div class="panel"><p class="t">Through a numerology lens</p><p id="reading"></p></div>
+    <div class="box">
+      <p class="kicker">How you see love</p>
+      <p class="serif" style="font-size:1.15rem;line-height:1.6;margin-bottom:1rem">The relationship you want also says something about what you need.</p>
+      <p class="mute" style="font-size:.9rem;margin:0">Look at your answers and notice one thing: does the relationship you hope for leave room to be yourself while also making you feel accepted and valued?</p>
+    </div>
+    <div class="box"><p class="kicker">Your hopes for love</p><p id="hope" style="color:var(--mute)"></p></div>
+    <div class="box"><p class="kicker">Your small step</p><p id="action" class="serif" style="font-size:1.15rem;line-height:1.6"></p></div>
+    <div class="quote">
+      <p class="serif" style="margin:0">“The curious paradox is that when I accept myself just as I am, then I can change.”</p>
+      <p style="font-size:.75rem;color:var(--faint);margin:.5rem 0 0">Carl Rogers</p>
+    </div>
+    <p class="small" style="border-top:1px solid var(--line);margin-top:2rem;padding-top:1.25rem">Numerology is an interpretive tradition with no scientific basis for predicting the future or determining personality. Use these results as material for reflection, and keep trusting your own experience, values, and choices.</p>
+    <button class="link" id="restart">Start over</button>
+  </div>
+
+</section>
+<footer>Quiet Space · A pause to listen to yourself</footer>
+</main>
+
+<script>
+const MAP={A:1,B:2,C:3,D:4,E:5,F:6,G:7,H:8,I:9,J:1,K:2,L:3,M:4,N:5,O:6,P:7,Q:8,R:9,S:1,T:2,U:3,V:4,W:5,X:6,Y:7,Z:8};
+const MASTER=[11,22,33];
+const THEME={1:"independence and initiative",2:"connection and sensitivity",3:"self-expression and creativity",4:"stability and steady building",5:"freedom and change",6:"care and responsibility",7:"introspection and the search for meaning",8:"ambition and practical strength",9:"compassion and letting go",11:"intuition and inspiration",22:"turning a vision into something real",33:"compassionate care for others"};
+const LP={
+1:"In numerology, 1 is often linked to independence, the drive to start things, and the wish to choose your own path. You can use this theme to ask: which parts of my life do I truly want to choose for myself?",
+2:"In numerology, 2 is often linked to relationships, cooperation, sensitivity, and a need for emotional connection. You can use this theme to look at how you want to feel close to someone without losing yourself.",
+3:"In numerology, 3 is often linked to self-expression, creativity, communication, and spontaneity. You might ask yourself: have I felt free enough to show what I really feel?",
+4:"In numerology, 4 is often linked to stability, structure, responsibility, and building things slowly. In relationships, this theme can be a space to reflect on safety and consistency.",
+5:"In numerology, 5 is often linked to freedom, experience, change, and curiosity. You can reflect on how to balance personal freedom with closeness to others.",
+6:"In numerology, 6 is often linked to caring, family, responsibility, and the wish for harmonious relationships. You might ask whether you give too much, or give with healthy boundaries.",
+7:"In numerology, 7 is often linked to introspection, the search for meaning, and a need for personal space. In relationships, you can reflect on how you open up while still protecting room for yourself.",
+8:"In numerology, 8 is often linked to ambition, perseverance, achievement, and managing life practically. You can reflect on how your personal goals, security, and the relationship you want fit together.",
+9:"In numerology, 9 is often linked to empathy, compassion, idealism, and releasing what no longer fits. You can reflect on what you want to bring into your next relationship, and what it may be time to let go of.",
+11:"In numerology, 11 is called a master number and is often linked to intuition, sensitivity, inspiration, and inner depth. You can use this theme to look closely at what you really feel, not just what shows on the outside.",
+22:"In numerology, 22 is a master number often linked to building something real from a vision. You can reflect on how your hopes and dreams could become a life you truly want to live.",
+33:"In numerology, 33 is a master number often linked to care, compassion, and the wish to make a positive difference for others. You can reflect on how to love others without forgetting your own needs."};
+const QS=[
+{k:"Let's start here",t:"What has been on your mind most lately?",d:"It doesn't have to be something big. Work, family, the future, relationships, money, or something you can't quite explain yourself.",p:"Write it as it is. It doesn't need to be good."},
+{k:"About love",t:"If one day you had a partner who made you truly comfortable, what would you want that relationship to feel like?",d:"Imagine not only who they are, but how it feels to live that relationship. What do you want to feel? What do you want to receive?",p:"For example: feeling safe, being able to talk about anything, supporting each other, building a life together..."},
+{k:"About your experiences",t:"In relationships, what are you most afraid will happen again?",d:"Maybe feeling unappreciated, left behind, misunderstood, giving too much, or losing yourself. Share only if you're comfortable.",p:"No need to name anyone. Just focus on what you felt."},
+{k:"About you",t:"What kind of partner do you want to be?",d:"Not a perfect one. Just picture the version of yourself you'd like to bring into a relationship.",p:"For example: more patient, a better listener, loyal, open, someone to come home to..."},
+{k:"Your hopes",t:"Picture your love life a few years from now. What do you hope it looks like?",d:"Not only whether you have a partner or not. Think about the relationship you want to build, the life you want to live, and the kind of person you want beside you.",p:"Write the picture that comes to mind...",last:1}
+];
+const $=id=>document.getElementById(id);
+const KEY="quietSpaceDraft";
+const N={lp:0,ex:0,su:0,pe:0,bd:0};
+let cur=1;
+
+const sumD=n=>String(n).split("").reduce((s,d)=>s+ +d,0);
+function reduce(n,keep=true){while(n>9&&!(keep&&MASTER.includes(n)))n=sumD(n);return n}
+const show=n=>MASTER.includes(n)?`${n}/${reduce(n,false)}`:`${n}`;
+const isV=(w,i)=>{const v=c=>!!c&&"AEIOU".includes(c);if(v(w[i]))return true;return w[i]==="Y"&&!v(w[i-1])&&!v(w[i+1])};
+function nameNum(name,test){
+  const words=name.normalize("NFD").replace(/[\u0300-\u036f]/g,"").toUpperCase().split(/[^A-Z]+/).filter(Boolean);
+  let total=0;
+  words.forEach(w=>{let s=0;[...w].forEach((c,i)=>{if(test(w,i))s+=MAP[c]});total+=reduce(s)});
+  return reduce(total);
+}
+function compute(){
+  const name=$("fullName").value.trim(),date=$("birthDate").value,e=$("err1");
+  if(!/[A-Za-z\u00C0-\u024F]/.test(name)||!date){e.textContent="Please enter your full name and date of birth.";return false}
+  const [y,m,d]=date.split("-").map(Number),t=new Date(y,m-1,d);
+  if(t.getMonth()!==m-1||t.getDate()!==d||y<1900||t>new Date()){e.textContent="That date doesn't look right. Please check it.";return false}
+  e.textContent="";
+  N.lp=reduce(reduce(m)+reduce(d)+reduce(y));
+  N.bd=reduce(d);
+  N.ex=nameNum(name,()=>true);
+  N.su=nameNum(name,isV);
+  N.pe=nameNum(name,(w,i)=>!isV(w,i));
+  const cards=[["Life Path",N.lp,"your direction"],["Expression",N.ex,"how you show up"],["Soul Urge",N.su,"your inner needs"],["Personality",N.pe,"how others see you"],["Birthday",N.bd,"a natural gift"]];
+  ["cards2","cards8"].forEach(id=>{$(id).innerHTML=cards.map(([l,n,s])=>`<div class="num"><b>${l}</b><span class="n">${show(n)}</span><small>${s}</small><small style="margin-top:.25rem">${THEME[n]}</small></div>`).join("")});
+  $("lpText").textContent=LP[N.lp];
+  const same=reduce(N.su,false)===reduce(N.ex,false);
+  $("reading").textContent=`Your Life Path, ${show(N.lp)}, centres on ${THEME[N.lp]}. Your Soul Urge, ${show(N.su)}, points to what you want underneath: ${THEME[N.su]}. Your Expression, ${show(N.ex)}, describes how you tend to show up: ${THEME[N.ex]}. `+(same?"These two match, which often feels like acting in line with what you truly want.":"They aren't the same number, which is common. It can be worth asking where what you want inside and how you show up don't quite meet.");
+  return true;
+}
+
+function build(){
+  $("qsteps").innerHTML=QS.map((q,i)=>`<div class="step" id="step${i+3}">
+  <p class="kicker">${q.k}</p><h2 class="serif" tabindex="-1">${q.t}</h2><p class="mute">${q.d}</p>
+  <label class="hint" for="q${i+1}" style="position:absolute;left:-9999px">Your answer</label>
+  <textarea id="q${i+1}" placeholder="${q.p}"></textarea>
+  ${q.last?`<div class="field" style="margin-top:1.25rem"><label for="act">After everything you've written, what is one small step you'd like to take?</label><textarea id="act" style="min-height:6rem" placeholder="Something realistic you could start in the next few days."></textarea></div>`:""}
+  ${q.last?'<p class="err" id="finishErr" role="alert"></p>':""}
+  <button class="btn" ${q.last?'id="finish"':"data-next"}>${q.last?"See my reflection":"Continue"}</button>
+  <button class="btn ghost" data-back>Back</button></div>`).join("");
+}
+
+function go(n){
+  document.querySelectorAll(".step").forEach(s=>s.classList.remove("active"));
+  const el=$("step"+n);el.classList.add("active");cur=n;
+  const p=Math.round(n/8*100);
+  $("stepLabel").textContent=`Step ${n} of 8`;$("pct").textContent=p+"%";$("bar").style.width=p+"%";
+  window.scrollTo({top:0,behavior:matchMedia("(prefers-reduced-motion:reduce)").matches?"auto":"smooth"});
+  el.querySelector("h2").focus({preventScroll:true});
+}
+function save(){
+  try{localStorage.setItem(KEY,JSON.stringify({name:$("fullName").value,date:$("birthDate").value,q:QS.map((_,i)=>$("q"+(i+1)).value),act:$("act").value}))}catch(e){}
+}
+function load(){
+  try{
+    const d=JSON.parse(localStorage.getItem(KEY)||"null");if(!d)return;
+    $("fullName").value=d.name||"";$("birthDate").value=d.date||"";
+    (d.q||[]).forEach((v,i)=>{if($("q"+(i+1)))$("q"+(i+1)).value=v});$("act").value=d.act||"";
+  }catch(e){}
+}
+async function finish(){
+  if(!N.lp&&!compute()){go(1);return}
+  const q5=$("q5").value.trim(),a=$("act").value.trim();
+  const btn=$("finish"),label=btn.textContent;
+  btn.disabled=true;btn.textContent="One moment...";
+  const payload={
+    name:$("fullName").value.trim(),birthDate:$("birthDate").value,
+    numerology:{lifePath:N.lp,birthday:N.bd,expression:N.ex,soulUrge:N.su,personality:N.pe},
+    q1:$("q1").value.trim(),q2:$("q2").value.trim(),q3:$("q3").value.trim(),q4:$("q4").value.trim(),q5,
+    direction:q5,nextStep:a,submittedAt:new Date().toISOString()
+  };
+  try{
+    const r=await fetch("/api/submit",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(payload)});
+    if(!r.ok)throw new Error("Submission failed");
+  }catch(err){
+    console.error(err);
+    $("finishErr").textContent="Something went wrong while sending your reflection. Please try again.";
+    btn.disabled=false;btn.textContent=label;return;
+  }
+  $("hope").textContent=q5||"You haven't written anything here yet, and that's okay. You can always come back to it.";
+  $("action").textContent=a||"No step chosen yet. Sometimes noticing is enough for today.";
+  $("finishErr").textContent="";
+  try{localStorage.removeItem(KEY)}catch(e){}
+  btn.disabled=false;btn.textContent=label;
+  go(8);
+}
+
+build();load();
+$("steps").addEventListener("click",e=>{
+  const b=e.target.closest("button");if(!b)return;
+  if(b.id==="finish")return finish();
+  if(b.id==="restart"){document.querySelectorAll("textarea,input").forEach(i=>i.value="");try{localStorage.removeItem(KEY)}catch(x){}N.lp=0;return go(1)}
+  if(b.hasAttribute("data-back"))return go(cur-1);
+  if(b.hasAttribute("data-next")){if(cur===1&&!compute())return;save();go(cur+1)}
+});
+document.addEventListener("input",()=>{clearTimeout(window._t);window._t=setTimeout(save,400)});
+$("fullName").addEventListener("keydown",e=>{if(e.key==="Enter"){e.preventDefault();$("birthDate").focus()}});
+$("birthDate").addEventListener("keydown",e=>{if(e.key==="Enter"){e.preventDefault();if(compute()){save();go(2)}}});
+</script>
 </body>
 </html>
